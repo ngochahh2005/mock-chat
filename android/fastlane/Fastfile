@@ -1,0 +1,18 @@
+default_platform(:android)
+
+platform :android do
+
+  lane :deploy_to_firebase do |options|
+        release_note = options[:release_note]
+        flavor = options[:flavor]
+        firebase_app_id = options[:firebase_app_id]
+        firebase_app_distribution(
+             app: firebase_app_id,
+             release_notes: release_note,
+             android_artifact_type: "APK",
+             groups: "Rikkei",
+             android_artifact_path: "../build/app/outputs/flutter-apk/app-#{flavor}-release.apk",
+          )
+  end
+
+end

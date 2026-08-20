@@ -1,0 +1,15 @@
+default_platform(:ios)
+
+platform :ios do
+  lane :deploy_to_firebase do |options|
+        release_note = options[:release_note]
+        firebase_app_id = options[:firebase_app_id]
+        firebase_app_distribution(
+             app: firebase_app_id,
+             release_notes: release_note,
+             groups: "Rikkei",
+             ipa_path: "../build/ios/ipa/<app_name>.ipa",
+          )
+  end
+
+end

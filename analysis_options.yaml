@@ -1,0 +1,29 @@
+include: package:flutter_lints/flutter.yaml
+analyzer:
+  exclude:
+    - "**.g.dart"
+    - "test/**"
+    - "plugins/**"
+    - "**.config.dart"
+    - "template_feature/**"
+  errors:
+    invalid_annotation_target: ignore
+    mixin_inherits_from_not_object: ignore
+
+linter:
+  rules:
+    always_specify_types: false
+    sort_constructors_first: false
+    directives_ordering: false
+    implementation_imports: false
+    always_use_package_imports: true
+    avoid_relative_lib_imports: true
+    depend_on_referenced_packages: false
+    avoid_classes_with_only_static_members: false
+    avoid_positional_boolean_parameters: false
+    require_trailing_commas: true
+    file_names: true
+    sized_box_for_whitespace: true
+    avoid_slow_async_io: true
+    cancel_subscriptions: true
+    close_sinks: true

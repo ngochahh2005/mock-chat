@@ -1,0 +1,11 @@
+name: template_feature
+description: A new brick created with the Mason CLI.
+version: 0.1.0+1
+environment:
+  mason: ">=0.1.0-dev.50 <0.2.0"
+vars:
+  feature:
+    type: string
+    description: Your feature
+    default: Template
+    prompt: What is your feature name?

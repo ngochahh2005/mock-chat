@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "504333744886",
+    "firebase_url": "https://basr-flutter-project-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "basr-flutter-project",
+    "storage_bucket": "basr-flutter-project.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504333744886:android:682f9437ef8344691e0ad7",
+        "android_client_info": {
+          "package_name": "com.example.base_bloc_3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN4o7aB5uZM5YC4x0vAVoXp4NwR-ePctE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504333744886:android:e5d68f31b4d4573a1e0ad7",
+        "android_client_info": {
+          "package_name": "com.example.base_bloc_3.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN4o7aB5uZM5YC4x0vAVoXp4NwR-ePctE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

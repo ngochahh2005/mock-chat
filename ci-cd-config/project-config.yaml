@@ -1,0 +1,12 @@
+# Change the flutter version to the one you want to use
+flutter_version=3.24.5
+#for firebase
+firebase_android_staging_app_id=<put your app id here>
+firebase_android_production_app_id=<put your app id here>
+firebase_ios_staging_app_id=<put your app id here>
+firebase_ios_production_app_id=<put your app id here>
+#for deploygate
+deploygate_android_staging_distribution_key=<put your distribution key here>
+deploygate_android_production_distribution_key=<put your distribution key here>
+deploygate_ios_staging_distribution_key=<put your distribution key here>
+deploygate_ios_production_distribution_key=<put your distribution key here>
