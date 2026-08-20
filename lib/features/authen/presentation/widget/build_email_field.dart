@@ -20,7 +20,6 @@ class BuildEmailField extends StatelessWidget {
         labelText: 'EMAIL',
         helperText: ' ',
         labelStyle: TextStyle(
-          fontFamily: 'lato',
           fontWeight: FontWeight.normal,
           fontSize: 14,
           color: Color(0xff999999),

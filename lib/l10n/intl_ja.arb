@@ -38,5 +38,8 @@
   "ok": "OK",
   "experience_app": "素晴らしいチャット体験を",
   "forgot_password": "パスワードをお忘れですか？",
-  "full_name": "フルネーム"
+  "full_name": "フルネーム",
+  "agree_with": "私は",
+  "policy": "プライバシーポリシー",
+  "regulation": "利用規約"
 }

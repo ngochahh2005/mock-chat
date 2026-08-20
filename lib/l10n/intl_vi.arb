@@ -38,5 +38,8 @@
   "ok": "OK",
   "experience_app": "Trải nghiệm Awesome Chat",
   "forgot_password": "Quên mật khẩu?",
-  "full_name": "Họ và tên"
+  "full_name": "Họ và tên",
+  "agree_with": "Tôi đồng ý với các ",
+  "policy": "chính sách",
+  "regulation": "điều khoản"
 }

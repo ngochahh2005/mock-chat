@@ -73,7 +73,6 @@ class _LoginScreenState
                           Text(
                             S.current.experience_app,
                             style: TextStyle(
-                              fontFamily: 'lato',
                               fontWeight: FontWeight.w300,
                               fontSize: 26,
                             ),
@@ -81,7 +80,6 @@ class _LoginScreenState
                           Text(
                             S.current.login,
                             style: TextStyle(
-                              fontFamily: 'lato',
                               fontWeight: FontWeight.w900,
                               fontSize: 32,
                               color: Color(0xff4356B4),
@@ -92,9 +90,7 @@ class _LoginScreenState
                             controllerEmail: _controllerEmail,
                             focusNode: _focusNodePassword,
                           ),
-                          SizedBox(
-                            height: 8.h,
-                          ),
+                          SizedBox(height: 8.h),
                           BuildPasswordField(
                             controllerPassword: _controllerPassword,
                             focusNodePassword: _focusNodePassword,
@@ -154,7 +150,6 @@ class _LoginScreenState
               child: Text(
                 S.current.login.toUpperCase(),
                 style: TextStyle(
-                  fontFamily: 'lato',
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
@@ -190,7 +185,6 @@ class _LoginScreenState
           S.current.do_not_have_an_account,
           style: TextStyle(
             color: Color(0xff999999),
-            fontFamily: 'lato',
             fontWeight: FontWeight.normal,
             fontSize: 14,
           ),
@@ -204,7 +198,6 @@ class _LoginScreenState
             S.current.signup,
             style: TextStyle(
               color: Color(0xff4356B4),
-              fontFamily: 'lato',
               fontWeight: FontWeight.w600,
               fontSize: 14,
             ),

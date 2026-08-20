@@ -39,5 +39,8 @@
   "ok": "OK",
   "experience_app": "Experience Awesome Chat",
   "forgot_password": "Forgot password?",
-  "full_name": "Full name"
+  "full_name": "Full name",
+  "agree_with": "I agree with the ",
+  "policy": "policies",
+  "regulation": "regulations"
 }

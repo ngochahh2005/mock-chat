@@ -408,6 +408,26 @@ class S {
   String get full_name {
     return Intl.message('Full name', name: 'full_name', desc: '', args: []);
   }
+
+  /// `I agree with the `
+  String get agree_with {
+    return Intl.message(
+      'I agree with the ',
+      name: 'agree_with',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `policies`
+  String get policy {
+    return Intl.message('policies', name: 'policy', desc: '', args: []);
+  }
+
+  /// `regulations`
+  String get regulation {
+    return Intl.message('regulations', name: 'regulation', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

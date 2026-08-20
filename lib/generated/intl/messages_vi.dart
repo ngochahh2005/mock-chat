@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "agree_with": MessageLookupByLibrary.simpleMessage("Tôi đồng ý với các "),
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "Đã có tài khoản?",
     ),
@@ -85,10 +86,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "permission_denied": MessageLookupByLibrary.simpleMessage(
       "Thông báo khi quyền truy cập bị từ chối",
     ),
+    "policy": MessageLookupByLibrary.simpleMessage("chính sách"),
     "register": MessageLookupByLibrary.simpleMessage("Đăng ký"),
     "registered_successfully": MessageLookupByLibrary.simpleMessage(
       "Đăng ký thành công",
     ),
+    "regulation": MessageLookupByLibrary.simpleMessage("điều khoản"),
     "signup": MessageLookupByLibrary.simpleMessage("Đăng ký"),
     "title": MessageLookupByLibrary.simpleMessage("Xin chào"),
     "username": MessageLookupByLibrary.simpleMessage("Tên người dùng"),

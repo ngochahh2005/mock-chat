@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Email": MessageLookupByLibrary.simpleMessage("Email"),
+    "agree_with": MessageLookupByLibrary.simpleMessage("I agree with the "),
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
@@ -82,10 +83,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "permission_denied": MessageLookupByLibrary.simpleMessage(
       "Message displayed when the user is denied permission",
     ),
+    "policy": MessageLookupByLibrary.simpleMessage("policies"),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "registered_successfully": MessageLookupByLibrary.simpleMessage(
       "Registered Successfully",
     ),
+    "regulation": MessageLookupByLibrary.simpleMessage("regulations"),
     "signup": MessageLookupByLibrary.simpleMessage("Signup"),
     "title": MessageLookupByLibrary.simpleMessage("Hello"),
     "username": MessageLookupByLibrary.simpleMessage("Username"),
