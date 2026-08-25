@@ -104,7 +104,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void _handleRouting(AuthState state) {
     if (state.isLogin) {
-      context.go(RouteName.home);
+      context.go(RouteName.chat);
     } else {
       context.go(RouteName.login);
     }

@@ -63,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Trải nghiệm Awesome Chat",
     ),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Quên mật khẩu?"),
+    "friends": MessageLookupByLibrary.simpleMessage("Bạn bè"),
     "full_name": MessageLookupByLibrary.simpleMessage("Họ và tên"),
     "greeting": MessageLookupByLibrary.simpleMessage(
       "Chào mừng bạn đến với ứng dụng của tôi!",
@@ -73,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "login_to_your_account": MessageLookupByLibrary.simpleMessage(
       "Đăng nhập vào tài khoản của bạn",
     ),
+    "message": MessageLookupByLibrary.simpleMessage("Tin nhắn"),
     "no_internet_access": MessageLookupByLibrary.simpleMessage(
       "Vui lòng kiểm tra lại kết nối mạng.",
     ),
@@ -87,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Thông báo khi quyền truy cập bị từ chối",
     ),
     "policy": MessageLookupByLibrary.simpleMessage("chính sách"),
+    "profile": MessageLookupByLibrary.simpleMessage("Trang cá nhân"),
     "register": MessageLookupByLibrary.simpleMessage("Đăng ký"),
     "registered_successfully": MessageLookupByLibrary.simpleMessage(
       "Đăng ký thành công",

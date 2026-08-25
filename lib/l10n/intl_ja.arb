@@ -41,5 +41,8 @@
   "full_name": "フルネーム",
   "agree_with": "私は",
   "policy": "プライバシーポリシー",
-  "regulation": "利用規約"
+  "regulation": "利用規約",
+  "message": "メッセージ",
+  "friends": "友人",
+  "profile": "個人ページ"
 }

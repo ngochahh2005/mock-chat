@@ -8,6 +8,8 @@ class RouteName {
   static const String chat = '/chat';
   static const String chatDetail = '/chatDetail';
   static const String splash = '/splash';
+  static const String friends = '/friends';
+  static const String profile = '/profile';
 
   static const publicRoutes = [
     login,

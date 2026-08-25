@@ -428,6 +428,21 @@ class S {
   String get regulation {
     return Intl.message('regulations', name: 'regulation', desc: '', args: []);
   }
+
+  /// `Message`
+  String get message {
+    return Intl.message('Message', name: 'message', desc: '', args: []);
+  }
+
+  /// `Friends`
+  String get friends {
+    return Intl.message('Friends', name: 'friends', desc: '', args: []);
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message('Profile', name: 'profile', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

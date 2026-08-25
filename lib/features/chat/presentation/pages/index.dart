@@ -1,2 +1,2 @@
-export 'chat/chat_page.dart';
-export 'chat_detail/chat_detail_page.dart';
+export 'chat/index.dart';
+export 'chat_detail/index.dart';

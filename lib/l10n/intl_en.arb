@@ -42,5 +42,8 @@
   "full_name": "Full name",
   "agree_with": "I agree with the ",
   "policy": "policies",
-  "regulation": "regulations"
+  "regulation": "regulations",
+  "message": "Message",
+  "friends": "Friends",
+  "profile": "Profile"
 }

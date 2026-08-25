@@ -64,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Experience Awesome Chat",
     ),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot password?"),
+    "friends": MessageLookupByLibrary.simpleMessage("Friends"),
     "full_name": MessageLookupByLibrary.simpleMessage("Full name"),
     "greeting": MessageLookupByLibrary.simpleMessage("Welcome to my app!"),
     "home_screen": MessageLookupByLibrary.simpleMessage("Home Screen"),
@@ -72,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "login_to_your_account": MessageLookupByLibrary.simpleMessage(
       "Login to your account",
     ),
+    "message": MessageLookupByLibrary.simpleMessage("Message"),
     "no_internet_access": MessageLookupByLibrary.simpleMessage(
       "No internet access, please check your internet connection",
     ),
@@ -84,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Message displayed when the user is denied permission",
     ),
     "policy": MessageLookupByLibrary.simpleMessage("policies"),
+    "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "registered_successfully": MessageLookupByLibrary.simpleMessage(
       "Registered Successfully",
