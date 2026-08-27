@@ -379,6 +379,16 @@ class S {
     );
   }
 
+  /// `Please verify your email to log in!`
+  String get verify_email_to_login {
+    return Intl.message(
+      'Please verify your email to log in!',
+      name: 'verify_email_to_login',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `OK`
   String get ok {
     return Intl.message('OK', name: 'ok', desc: '', args: []);
@@ -442,6 +452,166 @@ class S {
   /// `Profile`
   String get profile {
     return Intl.message('Profile', name: 'profile', desc: '', args: []);
+  }
+
+  /// `You are not logged in!`
+  String get not_logged_in {
+    return Intl.message(
+      'You are not logged in!',
+      name: 'not_logged_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This email is already used by another account!`
+  String get email_already_in_use {
+    return Intl.message(
+      'This email is already used by another account!',
+      name: 'email_already_in_use',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email format!`
+  String get invalid_email {
+    return Intl.message(
+      'Invalid email format!',
+      name: 'invalid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No account found with this email!`
+  String get user_not_found {
+    return Intl.message(
+      'No account found with this email!',
+      name: 'user_not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Incorrect password!`
+  String get wrong_password {
+    return Intl.message(
+      'Incorrect password!',
+      name: 'wrong_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email or password!`
+  String get invalid_credential {
+    return Intl.message(
+      'Invalid email or password!',
+      name: 'invalid_credential',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This account has been disabled!`
+  String get user_disabled {
+    return Intl.message(
+      'This account has been disabled!',
+      name: 'user_disabled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too many failed attempts. Please try again later.`
+  String get too_many_requests {
+    return Intl.message(
+      'Too many failed attempts. Please try again later.',
+      name: 'too_many_requests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Network connection error. Please check your 3G/Wifi.`
+  String get network_request_failed {
+    return Intl.message(
+      'Network connection error. Please check your 3G/Wifi.',
+      name: 'network_request_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter both email and password.`
+  String get channel_error {
+    return Intl.message(
+      'Please enter both email and password.',
+      name: 'channel_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login failed. Error code:`
+  String get error_message {
+    return Intl.message(
+      'Login failed. Error code:',
+      name: 'error_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User information not found!`
+  String get user_info_not_found {
+    return Intl.message(
+      'User information not found!',
+      name: 'user_info_not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message('Language', name: 'language', desc: '', args: []);
+  }
+
+  /// `Notification`
+  String get notification {
+    return Intl.message(
+      'Notification',
+      name: 'notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message('Logout', name: 'logout', desc: '', args: []);
+  }
+
+  /// `App version`
+  String get app_version {
+    return Intl.message('App version', name: 'app_version', desc: '', args: []);
+  }
+
+  /// `Edit information`
+  String get edit_info {
+    return Intl.message(
+      'Edit information',
+      name: 'edit_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message('Save', name: 'save', desc: '', args: []);
   }
 }
 

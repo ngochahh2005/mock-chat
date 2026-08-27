@@ -1,24 +1,13 @@
 import 'package:base_bloc_3/common/widgets/not_found_screen.dart';
 import 'package:base_bloc_3/features/category/index.dart';
 import 'package:base_bloc_3/features/chat/index.dart';
-import 'package:base_bloc_3/features/profile/profile_screen.dart';
+import 'package:base_bloc_3/features/profile/index.dart';
+import 'package:base_bloc_3/features/setting_app/bloc/setting_bloc.dart';
 import 'package:base_bloc_3/import.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 
 final router = GoRouter(
   initialLocation: RouteName.splash,
-  // redirect: (context, state) {
-  //   final loggedIn = FirebaseAuth.instance.currentUser != null;
-  //   final isAuthRoute = state.matchedLocation == RouteName.login || state.matchedLocation == RouteName.register;
-  //   if (!loggedIn && !isAuthRoute) {
-  //     return RouteName.login;
-  //   }
-  //   if (loggedIn && isAuthRoute) {
-  //     return RouteName.home;
-  //   }
-  //   return null;
-  // },
   errorBuilder: (context, state) =>
       NotFoundScreen(uri: state.extra as String? ?? ''),
   debugLogDiagnostics: true,
@@ -29,11 +18,6 @@ final router = GoRouter(
         key: state.pageKey,
         child: SplashScreen(),
       ),
-    ),
-    GoRoute(
-      path: RouteName.home,
-      pageBuilder: (BuildContext context, GoRouterState state) =>
-          MaterialPage<void>(key: state.pageKey, child: HomeScreen()),
     ),
     GoRoute(
       path: RouteName.login,
@@ -63,11 +47,16 @@ final router = GoRouter(
     ),
     ShellRoute(
       builder: (context, state, child) {
-        return Scaffold(
-          extendBody: true,
-          backgroundColor: Colors.transparent,
-          body: child,
-          bottomNavigationBar: _buildBottomNavigationBar(context, state),
+        return BlocBuilder<SettingBloc, SettingState>(
+          bloc: getIt<SettingBloc>(),
+          builder: (context, settingState) {
+            return Scaffold(
+              extendBody: true,
+              backgroundColor: Colors.transparent,
+              body: child,
+              bottomNavigationBar: _buildBottomNavigationBar(context, state),
+            );
+          },
         );
       },
       routes: [
@@ -82,7 +71,7 @@ final router = GoRouter(
           path: RouteName.profile,
           pageBuilder: (context, state) => MaterialPage(
             key: state.pageKey,
-            child: ProfileScreen(),
+            child: ProfilePage(),
           ),
         ),
       ],
@@ -100,6 +89,14 @@ final router = GoRouter(
         );
       },
     ),
+
+    GoRoute(
+      path: RouteName.editProfile,
+      pageBuilder: (context, state) => MaterialPage(
+        key: state.pageKey,
+        child: EditProfilePage(),
+      ),
+    )
   ],
 );
 
@@ -135,7 +132,7 @@ Widget _buildBottomNavigationBar(BuildContext context, GoRouterState state) {
         _buildNavItem(
           context: context,
           icon: CupertinoIcons.chat_bubble_2_fill,
-          label: S.current.message,
+          label: S.of(context).message,
           isSelected: selectedIdx == 0,
           badgeCount: 3,
           showDot: true,

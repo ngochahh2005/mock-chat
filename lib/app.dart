@@ -45,11 +45,11 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
       builder: (context, child) {
         return BlocBuilder<AuthBloc, AuthState>(
           bloc: getIt<AuthBloc>(),
-          builder: (context, state) {
+          builder: (context, authState) {
             return BlocBuilder<SettingBloc, SettingState>(
               bloc: getIt<SettingBloc>(),
               buildWhen: (previous, current) => previous.appLocale != current.appLocale,
-              builder: (context, state) {
+              builder: (context, settingState) {
                 return MaterialApp.router(
                   debugShowCheckedModeBanner: false,
                   theme: ThemeData(
@@ -67,7 +67,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                     GlobalCupertinoLocalizations.delegate,
                     S.delegate,
                   ],
-                  locale: state.appLocale.locale,
+                  locale: settingState.appLocale.locale,
                   routerConfig: router,
                 );
               },

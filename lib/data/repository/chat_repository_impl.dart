@@ -129,4 +129,10 @@ class ChatRepoImpl with ApiHelperMixin implements ChatRepo {
       return Left(BaseError.httpUnknownError(e.toString()));
     }
   }
+
+  @override
+  Future<Either<BaseError, UserEntity>> getUserById(String uid) {
+    // TODO: implement getUserById
+    throw UnimplementedError();
+  }
 }

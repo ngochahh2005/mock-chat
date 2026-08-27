@@ -130,19 +130,39 @@ class _ChatPageState
                       itemCount: state.rooms.length,
                       itemBuilder: (context, i) {
                         final room = state.rooms[i];
+                        final peerId = room.members.where((id) => id != FirebaseAuth.instance.currentUser?.uid).firstOrNull ?? '';
                         return ListTile(
-                          leading:
-                              const CircleAvatar(child: Icon(Icons.person)),
+                          // avatar
+                          leading: Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: LinearGradient(
+                                colors: [
+                                  Color(0xff4356B4),
+                                  Color(0xff3DCFCF),
+                                ],
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                              ),
+                            ),
+                            child: Center(
+                              child: Icon(Icons.person, color: Colors.white),
+                            ),
+                          ),
                           title: Text(
-                            "Phòng: ${room.id.split('_').firstWhere((id) => id != FirebaseAuth.instance.currentUser?.uid)}",
+                            peerId,
                           ),
                           subtitle:
                               Text(room.lastMessage ?? "Chưa có tin nhắn"),
                           onTap: () {
-                            final peerId = room.members.firstWhere(
-                              (id) =>
-                                  id != FirebaseAuth.instance.currentUser?.uid,
-                            );
+                            final peerId = room.members
+                                    .where((id) =>
+                                        id !=
+                                        FirebaseAuth.instance.currentUser?.uid)
+                                    .firstOrNull ??
+                                '';
                             context.push(
                               RouteName.chatDetail,
                               extra: {
@@ -152,13 +172,14 @@ class _ChatPageState
                             );
                           },
                         );
-                      }, separatorBuilder: (context, index) => Divider(
-                      height: 1,
-                      thickness: 2,
-                      indent: 75,
-                      endIndent: 16,
-                      color: Color(0xffD2D2D2),
-                    ),
+                      },
+                      separatorBuilder: (context, index) => Divider(
+                        height: 1,
+                        thickness: 2,
+                        indent: 75,
+                        endIndent: 16,
+                        color: Color(0xffD2D2D2),
+                      ),
                     );
                   },
                 ),

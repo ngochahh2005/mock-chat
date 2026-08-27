@@ -126,7 +126,7 @@ class _LoginScreenState
           current.isLoginSuccess,
       listener: (context, state) {
         if (state.isLoginSuccess) {
-          context.go(RouteName.home);
+          context.go(RouteName.chat);
         }
       },
       builder: (context, state) {

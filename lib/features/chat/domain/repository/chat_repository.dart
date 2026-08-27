@@ -7,4 +7,5 @@ abstract class ChatRepo {
   Stream<List<ChatRoomEntity>> getMyChatRooms();
   Stream<List<MessageEntity>> getMessagesStream(String roomId);
   Future<Either<BaseError, void>> sendMessage(String roomId, String content);
+  Future<Either<BaseError, UserEntity>> getUserById(String uid);
 }

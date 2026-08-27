@@ -28,6 +28,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "Đã có tài khoản?",
     ),
+    "app_version": MessageLookupByLibrary.simpleMessage("Phiên bản ứng dụng"),
+    "channel_error": MessageLookupByLibrary.simpleMessage(
+      "Vui lòng nhập đầy đủ email và mật khẩu.",
+    ),
     "click_to_reload": MessageLookupByLibrary.simpleMessage("Nhấn để tải lại"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Xác nhận mật khẩu",
@@ -53,6 +57,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "do_not_have_an_account": MessageLookupByLibrary.simpleMessage(
       "Chưa có tài khoản?",
     ),
+    "edit_info": MessageLookupByLibrary.simpleMessage("Chỉnh sửa thông tin"),
+    "email_already_in_use": MessageLookupByLibrary.simpleMessage(
+      "Email này đã được sử dụng bởi tài khoản khác!",
+    ),
+    "error_message": MessageLookupByLibrary.simpleMessage(
+      "Đăng nhập thất bại. Mã lỗi:",
+    ),
     "error_system": MessageLookupByLibrary.simpleMessage(
       "Đã có lỗi xảy ra, vui lòng thử lại sau.",
     ),
@@ -69,16 +80,31 @@ class MessageLookup extends MessageLookupByLibrary {
       "Chào mừng bạn đến với ứng dụng của tôi!",
     ),
     "home_screen": MessageLookupByLibrary.simpleMessage("Màn hình chính"),
+    "invalid_credential": MessageLookupByLibrary.simpleMessage(
+      "Email hoặc mật khẩu không chính xác!",
+    ),
+    "invalid_email": MessageLookupByLibrary.simpleMessage(
+      "Email không hợp lệ!",
+    ),
     "invalid_otp": MessageLookupByLibrary.simpleMessage("Mã OTP không hợp lệ."),
+    "language": MessageLookupByLibrary.simpleMessage("Ngôn ngữ"),
     "login": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
     "login_to_your_account": MessageLookupByLibrary.simpleMessage(
       "Đăng nhập vào tài khoản của bạn",
     ),
+    "logout": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
     "message": MessageLookupByLibrary.simpleMessage("Tin nhắn"),
+    "network_request_failed": MessageLookupByLibrary.simpleMessage(
+      "Lỗi kết nối mạng. Vui lòng kiểm tra lại 3G/Wifi.",
+    ),
     "no_internet_access": MessageLookupByLibrary.simpleMessage(
       "Vui lòng kiểm tra lại kết nối mạng.",
     ),
     "not_found": MessageLookupByLibrary.simpleMessage("Không tìm thấy."),
+    "not_logged_in": MessageLookupByLibrary.simpleMessage(
+      "Bạn chưa đăng nhập!",
+    ),
+    "notification": MessageLookupByLibrary.simpleMessage("Thông báo"),
     "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "page_not_found": MessageLookupByLibrary.simpleMessage(
       "Không tìm thấy trang",
@@ -95,8 +121,21 @@ class MessageLookup extends MessageLookupByLibrary {
       "Đăng ký thành công",
     ),
     "regulation": MessageLookupByLibrary.simpleMessage("điều khoản"),
+    "save": MessageLookupByLibrary.simpleMessage("Lưu"),
     "signup": MessageLookupByLibrary.simpleMessage("Đăng ký"),
     "title": MessageLookupByLibrary.simpleMessage("Xin chào"),
+    "too_many_requests": MessageLookupByLibrary.simpleMessage(
+      "Bạn đã nhập sai quá nhiều lần. Vui lòng thử lại sau.",
+    ),
+    "user_disabled": MessageLookupByLibrary.simpleMessage(
+      "Tài khoản đã bị vô hiệu hóa!",
+    ),
+    "user_info_not_found": MessageLookupByLibrary.simpleMessage(
+      "Không tìm thấy thông tin người dùng!",
+    ),
+    "user_not_found": MessageLookupByLibrary.simpleMessage(
+      "Không tìm thấy tài khoản nào với email này!",
+    ),
     "username": MessageLookupByLibrary.simpleMessage("Tên người dùng"),
     "validators_email_invalid": MessageLookupByLibrary.simpleMessage(
       "Email không hợp lệ.",
@@ -117,8 +156,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "validators_username_required": MessageLookupByLibrary.simpleMessage(
       "Vui lòng nhập tên người dùng.",
     ),
+    "verify_email_to_login": MessageLookupByLibrary.simpleMessage(
+      "Vui lòng xác thực email để đăng nhập!",
+    ),
     "welcome_back": MessageLookupByLibrary.simpleMessage(
       "Chào mừng bạn quay lại",
+    ),
+    "wrong_password": MessageLookupByLibrary.simpleMessage(
+      "Mật khẩu không chính xác!",
     ),
   };
 }

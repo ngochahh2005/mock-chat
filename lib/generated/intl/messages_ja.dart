@@ -28,6 +28,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "すでにアカウントをお持ちですか？",
     ),
+    "app_version": MessageLookupByLibrary.simpleMessage("アプリケーションバージョン"),
+    "channel_error": MessageLookupByLibrary.simpleMessage(
+      "メールアドレスとパスワードを入力してください。",
+    ),
     "click_to_reload": MessageLookupByLibrary.simpleMessage(
       "再読み込みをクリックしてください。",
     ),
@@ -51,6 +55,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "do_not_have_an_account": MessageLookupByLibrary.simpleMessage(
       "アカウントをお持ちでないですか？",
     ),
+    "edit_info": MessageLookupByLibrary.simpleMessage("情報を編集する"),
+    "email_already_in_use": MessageLookupByLibrary.simpleMessage(
+      "このメールアドレスはすでに別の アカウントで使用されています！",
+    ),
+    "error_message": MessageLookupByLibrary.simpleMessage(
+      "ログインに失敗しました。エラーコード：",
+    ),
     "error_system": MessageLookupByLibrary.simpleMessage(
       "エラーが発生しました。後でもう一度お試しください。",
     ),
@@ -61,16 +72,27 @@ class MessageLookup extends MessageLookupByLibrary {
     "full_name": MessageLookupByLibrary.simpleMessage("フルネーム"),
     "greeting": MessageLookupByLibrary.simpleMessage("私のアプリへようこそ!"),
     "home_screen": MessageLookupByLibrary.simpleMessage("ホーム画面"),
+    "invalid_credential": MessageLookupByLibrary.simpleMessage(
+      "メールアドレスまたはパスワードが正しくありません！",
+    ),
+    "invalid_email": MessageLookupByLibrary.simpleMessage("無効なメールアドレスです！"),
     "invalid_otp": MessageLookupByLibrary.simpleMessage("無効なOTPです。"),
+    "language": MessageLookupByLibrary.simpleMessage("言語"),
     "login": MessageLookupByLibrary.simpleMessage("ログイン"),
     "login_to_your_account": MessageLookupByLibrary.simpleMessage("アカウントにログイン"),
+    "logout": MessageLookupByLibrary.simpleMessage("ログアウト"),
     "message": MessageLookupByLibrary.simpleMessage("メッセージ"),
+    "network_request_failed": MessageLookupByLibrary.simpleMessage(
+      "ネットワーク接続エラーです。3G/Wi-Fiをご確認ください。",
+    ),
     "no_internet_access": MessageLookupByLibrary.simpleMessage(
       "インターネットに接続できません。接続を確認してください。",
     ),
     "not_found": MessageLookupByLibrary.simpleMessage(
       "リソースが見つからない場合に表示されるメッセージ",
     ),
+    "not_logged_in": MessageLookupByLibrary.simpleMessage("ログインしていません"),
+    "notification": MessageLookupByLibrary.simpleMessage("通知"),
     "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "page_not_found": MessageLookupByLibrary.simpleMessage("ページが見つかりません"),
     "page_not_found_message": m0,
@@ -83,8 +105,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "register": MessageLookupByLibrary.simpleMessage("登録"),
     "registered_successfully": MessageLookupByLibrary.simpleMessage("登録成功"),
     "regulation": MessageLookupByLibrary.simpleMessage("利用規約"),
+    "save": MessageLookupByLibrary.simpleMessage("保存"),
     "signup": MessageLookupByLibrary.simpleMessage("サインアップ"),
     "title": MessageLookupByLibrary.simpleMessage("Hello"),
+    "too_many_requests": MessageLookupByLibrary.simpleMessage(
+      "試行回数が多すぎます。しばらくしてからもう一度お試しください。",
+    ),
+    "user_disabled": MessageLookupByLibrary.simpleMessage("このアカウントは無効化されています！"),
+    "user_info_not_found": MessageLookupByLibrary.simpleMessage(
+      "ユーザー情報が見つかりませんでした！",
+    ),
+    "user_not_found": MessageLookupByLibrary.simpleMessage(
+      "このメールアドレスのアカウントが見つかりません！",
+    ),
     "username": MessageLookupByLibrary.simpleMessage("ユーザー名"),
     "validators_email_invalid": MessageLookupByLibrary.simpleMessage(
       "無効なメールアドレスです。",
@@ -105,6 +138,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "validators_username_required": MessageLookupByLibrary.simpleMessage(
       "ユーザー名を入力してください。",
     ),
+    "verify_email_to_login": MessageLookupByLibrary.simpleMessage(
+      "ログインするにはメールアドレスを確認してください！",
+    ),
     "welcome_back": MessageLookupByLibrary.simpleMessage("お帰りなさい"),
+    "wrong_password": MessageLookupByLibrary.simpleMessage("パスワードが正しくありません！"),
   };
 }
