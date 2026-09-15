@@ -31,6 +31,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
+  bool _isChecked = false;
 
   late TapGestureRecognizer _policiesRecognizer;
   late TapGestureRecognizer _regulationsRecognizer;
@@ -56,7 +57,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
     if (email.isNotEmpty &&
         password.isNotEmpty &&
         username.isNotEmpty &&
-        confirmPassword.isNotEmpty) {
+        confirmPassword.isNotEmpty &&
+        _isChecked == true) {
       _isFormValid.value = true;
     } else {
       _isFormValid.value = false;
@@ -68,10 +70,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.initState();
     _policiesRecognizer = TapGestureRecognizer()
       ..onTap = () =>
-          _showBottomSheet(context, S.current.policy, "Nội dung chính sách");
+          _showBottomSheet(context, S.current.policy, S.current.content_policy);
     _regulationsRecognizer = TapGestureRecognizer()
-      ..onTap = () => _showBottomSheet(
-          context, S.current.regulation, "Nội dung của điều khoản");
+      ..onTap = () =>
+          _showBottomSheet(context, S.current.terms, S.current.content_terms);
     _controllerUsername.addListener(_validateFormInputs);
     _controllerEmail.addListener(_validateFormInputs);
     _controllerPassword.addListener(_validateFormInputs);
@@ -306,12 +308,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   void _showBottomSheet(BuildContext context, String title, String content) {
     showModalBottomSheet(
+      backgroundColor: Colors.white,
       context: context,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
       ),
       builder: (context) {
         return Container(
+          width: double.infinity,
           padding: EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -342,41 +346,56 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   Widget _buildTermsAddConditionsText() {
     return Center(
-      child: RichText(
-        text: TextSpan(
-          children: [
-            TextSpan(
-              text: S.current.agree_with,
-              style: const TextStyle(
-                color: Color(0xff999999),
-                fontWeight: FontWeight.bold,
-              ),
+      child: Row(
+        children: [
+          Checkbox(
+            value: _isChecked,
+            onChanged: (_) {
+              setState(() {
+                _isChecked = !_isChecked;
+              });
+              _validateFormInputs();
+            },
+            activeColor: Color(0xff4356B4),
+            shape: CircleBorder(),
+          ),
+          RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: S.current.agree_with,
+                  style: const TextStyle(
+                    color: Color(0xff999999),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                TextSpan(
+                  text: S.current.policy.toLowerCase(),
+                  style: TextStyle(
+                    color: Color(0xff4356B4),
+                    fontWeight: FontWeight.bold,
+                  ),
+                  recognizer: _policiesRecognizer,
+                ),
+                const TextSpan(
+                  text: " & ",
+                  style: TextStyle(
+                    color: Color(0xff999999),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                TextSpan(
+                  text: S.current.terms.toLowerCase(),
+                  style: TextStyle(
+                    color: Color(0xff4356B4),
+                    fontWeight: FontWeight.bold,
+                  ),
+                  recognizer: _regulationsRecognizer,
+                ),
+              ],
             ),
-            TextSpan(
-              text: S.current.policy,
-              style: TextStyle(
-                color: Color(0xff4356B4),
-                fontWeight: FontWeight.bold,
-              ),
-              recognizer: _policiesRecognizer,
-            ),
-            const TextSpan(
-              text: " & ",
-              style: TextStyle(
-                color: Color(0xff999999),
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            TextSpan(
-              text: S.current.regulation,
-              style: TextStyle(
-                color: Color(0xff4356B4),
-                fontWeight: FontWeight.bold,
-              ),
-              recognizer: _regulationsRecognizer,
-            ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

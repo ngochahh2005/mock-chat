@@ -36,6 +36,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "再読み込みをクリックしてください。",
     ),
     "confirm_password": MessageLookupByLibrary.simpleMessage("パスワードを確認"),
+    "content_policy": MessageLookupByLibrary.simpleMessage(
+      "当社は、お客様のプライバシー保護に努めています。お客様のすべての個人データおよびメッセージ内容は、システム上で安全に暗号化されます。当アプリは、機能の維持、アカウントの認証、およびユーザー体験の向上のために必要な情報のみを収集します。当社は、お客様の明示的な同意がない限り、商業目的でお客様の個人情報を第三者に販売、交換、または共有することは一切ありません。",
+    ),
+    "content_terms": MessageLookupByLibrary.simpleMessage(
+      "当社のチャットアプリに登録し利用することにより、お客様は本規約に従うことに同意したものとみなされます。お客様は、ログイン情報の機密性を保持し、ご自身のアカウントで行われるすべての活動に対して単独で責任を負うものとします。当アプリでは、スパム行為、フィッシング、マルウェアの配布、ハラスメント、または違法なコンテンツの共有を固く禁じています。違反が発覚した場合、当社は事前の通知なしにお客様のアカウントを一時停止または永久に削除する権利を留保します。本規約は定期的に更新される場合があり、アプリの継続的な利用をもって変更に同意したものとみなされます。",
+    ),
     "create_your_account": MessageLookupByLibrary.simpleMessage("アカウントを作成"),
     "dio_cancel_other": MessageLookupByLibrary.simpleMessage(
       "サーバーへの接続に失敗しました。もう一度お試しください。",
@@ -59,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "このメールアドレスはすでに別の アカウントで使用されています！",
     ),
+    "enter_message": MessageLookupByLibrary.simpleMessage("メッセージを入力してください..."),
     "error_message": MessageLookupByLibrary.simpleMessage(
       "ログインに失敗しました。エラーコード：",
     ),
@@ -78,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalid_email": MessageLookupByLibrary.simpleMessage("無効なメールアドレスです！"),
     "invalid_otp": MessageLookupByLibrary.simpleMessage("無効なOTPです。"),
     "language": MessageLookupByLibrary.simpleMessage("言語"),
+    "loading": MessageLookupByLibrary.simpleMessage("読み込み中..."),
     "login": MessageLookupByLibrary.simpleMessage("ログイン"),
     "login_to_your_account": MessageLookupByLibrary.simpleMessage("アカウントにログイン"),
     "logout": MessageLookupByLibrary.simpleMessage("ログアウト"),
@@ -88,6 +96,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_internet_access": MessageLookupByLibrary.simpleMessage(
       "インターネットに接続できません。接続を確認してください。",
     ),
+    "no_chat": MessageLookupByLibrary.simpleMessage("まだチャットはありません"),
+    "no_message": MessageLookupByLibrary.simpleMessage("まだメッセージはありません！"),
     "not_found": MessageLookupByLibrary.simpleMessage(
       "リソースが見つからない場合に表示されるメッセージ",
     ),
@@ -104,9 +114,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "profile": MessageLookupByLibrary.simpleMessage("個人ページ"),
     "register": MessageLookupByLibrary.simpleMessage("登録"),
     "registered_successfully": MessageLookupByLibrary.simpleMessage("登録成功"),
-    "regulation": MessageLookupByLibrary.simpleMessage("利用規約"),
     "save": MessageLookupByLibrary.simpleMessage("保存"),
     "signup": MessageLookupByLibrary.simpleMessage("サインアップ"),
+    "terms": MessageLookupByLibrary.simpleMessage("規約"),
     "title": MessageLookupByLibrary.simpleMessage("Hello"),
     "too_many_requests": MessageLookupByLibrary.simpleMessage(
       "試行回数が多すぎます。しばらくしてからもう一度お試しください。",
@@ -143,5 +153,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "welcome_back": MessageLookupByLibrary.simpleMessage("お帰りなさい"),
     "wrong_password": MessageLookupByLibrary.simpleMessage("パスワードが正しくありません！"),
+    "today": MessageLookupByLibrary.simpleMessage("今日"),
+    "yesterday": MessageLookupByLibrary.simpleMessage("昨日"),
+    "search_username": MessageLookupByLibrary.simpleMessage("ユーザー名を検索..."),
+    "sticker_load_error": MessageLookupByLibrary.simpleMessage("スタンプを読み込めません"),
+    "no_stickers": MessageLookupByLibrary.simpleMessage("スタンプがありません"),
+    "chat_load_error": MessageLookupByLibrary.simpleMessage("メッセージを読み込めません"),
+    "save_success": MessageLookupByLibrary.simpleMessage("保存しました！"),
   };
 }

@@ -1,5 +1,6 @@
 import 'package:base_bloc_3/common/external_lib.dart';
 import 'package:base_bloc_3/features/chat/presentation/bloc/chat_bloc.dart';
+import 'package:base_bloc_3/generated/l10n.dart';
 import 'package:flutter/cupertino.dart';
 
 class SearchUsernameTextField extends StatelessWidget {
@@ -15,7 +16,7 @@ class SearchUsernameTextField extends StatelessWidget {
     return TextField(
       cursorColor: Color(0xff4356B4),
       decoration: InputDecoration(
-        hintText: "Tìm kiếm username...",
+        hintText: S.of(context).search_username,
         hintStyle: TextStyle(
           fontSize: 16,
           color: Color(0xff999999),

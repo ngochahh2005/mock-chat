@@ -2,6 +2,7 @@ import 'package:base_bloc_3/features/chat/domain/entity/index.dart';
 import 'package:base_bloc_3/features/chat/domain/repository/chat_repository.dart';
 import 'package:base_bloc_3/generated/intl/messages_en.dart';
 import 'package:base_bloc_3/import.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 part 'chat_bloc.freezed.dart';
 
@@ -21,6 +22,7 @@ class ChatBloc extends BaseBloc<ChatEvent, ChatState> {
         fetchMyRooms: () => _onFetchMyRooms(emit),
         searchUser: (username) => _onSearchUser(emit, username),
         clearSearch: () => _onClearSearch(emit),
+        fetchUserInfo: (peerId) => _onFetchUserInfo(emit, peerId),
       );
     });
   }
@@ -31,8 +33,19 @@ class ChatBloc extends BaseBloc<ChatEvent, ChatState> {
     try {
       await emit.forEach<List<ChatRoomEntity>>(
         _repo.getMyChatRooms(),
-        onData: (rooms) =>
-            state.copyWith(status: BaseStateStatus.success, rooms: rooms),
+        onData: (rooms) {
+          final myUid = FirebaseAuth.instance.currentUser?.uid;
+          for (var room in rooms) {
+            final peerId = room.members.firstWhere((id) => id != myUid, orElse: () => myUid ?? '',);
+            if (peerId.isNotEmpty && !state.users.containsKey(peerId)) {
+              add(ChatEvent.fetchUserInfo(peerId));
+            }
+          }
+          return state.copyWith(
+            status: BaseStateStatus.success,
+            rooms: rooms,
+          );
+        },
         onError: (error, stackTrace) =>
             state.copyWith(status: BaseStateStatus.failed),
       );
@@ -55,5 +68,18 @@ class ChatBloc extends BaseBloc<ChatEvent, ChatState> {
 
   Future<void> _onClearSearch(Emitter<ChatState> emit) async {
     emit(state.copyWith(searchResults: []));
+  }
+
+  Future<void> _onFetchUserInfo(Emitter<ChatState> emit, String peerId) async {
+    if (state.users.containsKey(peerId)) return;
+    final resp = await _repo.getUserById(peerId);
+    resp.fold(
+        (_) => emit(state.copyWith(status: BaseStateStatus.failed)),
+        (user) {
+          final newUsersMap = Map<String, UserEntity>.from(state.users);
+          newUsersMap[peerId] = user;
+          emit(state.copyWith(status: BaseStateStatus.success, users: newUsersMap));
+        }
+    );
   }
 }

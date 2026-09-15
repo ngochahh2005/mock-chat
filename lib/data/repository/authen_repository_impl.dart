@@ -86,8 +86,9 @@ class AuthenRepositoryImpl implements AuthenRepository {
   Future<Either<BaseError, Map<String, dynamic>>> fetchProfile() async {
     try {
       final user = _auth.currentUser;
-      if (user == null)
+      if (user == null) {
         return Left(BaseError.httpUnknownError(S.current.not_logged_in));
+      }
 
       final doc = await _firestore.collection('users').doc(user.uid).get();
 
@@ -135,10 +136,12 @@ class AuthenRepositoryImpl implements AuthenRepository {
 
       if (username != null) updateData['username'] = username;
       if (photoUrl != null) updateData['avatar'] = photoUrl;
+      if (displayName != null) updateData['displayName'] = displayName;
 
       if (updateData.isNotEmpty) {
         await _firestore.collection('users').doc(user.uid).set(updateData, SetOptions(merge: true));
       }
+      await user.reload();
       return const Right(null);
     } catch (e) {
       return Left(BaseError.httpUnknownError(e.toString()));

@@ -37,6 +37,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
     ),
+    "content_policy": MessageLookupByLibrary.simpleMessage(
+      "We are committed to protecting your privacy. All your personal data and message contents are securely encrypted on our systems. The application only collects information necessary to maintain its functionality, authenticate accounts, and improve user experience. We strictly do not sell, trade, or share your personal information with any third parties for commercial purposes without your explicit consent.",
+    ),
+    "content_terms": MessageLookupByLibrary.simpleMessage(
+      "By registering and using our chat application, you agree to comply with these terms. You are solely responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account. The application strictly prohibits spamming, phishing, distributing malware, harassment, or sharing any illegal content. We reserve the right to suspend or permanently terminate your account without prior notice if any violation is detected. These terms may be updated periodically, and your continued use of the app constitutes your acceptance of such changes.",
+    ),
     "create_your_account": MessageLookupByLibrary.simpleMessage(
       "Create your account",
     ),
@@ -62,6 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "This email is already used by another account!",
     ),
+    "enter_message": MessageLookupByLibrary.simpleMessage("Enter message..."),
     "error_message": MessageLookupByLibrary.simpleMessage(
       "Login failed. Error code:",
     ),
@@ -87,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "invalid_otp": MessageLookupByLibrary.simpleMessage("Invalid OTP."),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
+    "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_to_your_account": MessageLookupByLibrary.simpleMessage(
       "Login to your account",
@@ -96,9 +104,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "network_request_failed": MessageLookupByLibrary.simpleMessage(
       "Network connection error. Please check your 3G/Wifi.",
     ),
+    "no_chats": MessageLookupByLibrary.simpleMessage("No chats yet!"),
+    "no_chat": MessageLookupByLibrary.simpleMessage("No chats yet!"),
     "no_internet_access": MessageLookupByLibrary.simpleMessage(
       "No internet access, please check your internet connection",
     ),
+    "no_message": MessageLookupByLibrary.simpleMessage("No messages yet!"),
     "not_found": MessageLookupByLibrary.simpleMessage("Not found."),
     "not_logged_in": MessageLookupByLibrary.simpleMessage(
       "You are not logged in!",
@@ -111,15 +122,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "permission_denied": MessageLookupByLibrary.simpleMessage(
       "Message displayed when the user is denied permission",
     ),
-    "policy": MessageLookupByLibrary.simpleMessage("policies"),
+    "policy": MessageLookupByLibrary.simpleMessage("Policies"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "registered_successfully": MessageLookupByLibrary.simpleMessage(
       "Registered Successfully",
     ),
-    "regulation": MessageLookupByLibrary.simpleMessage("regulations"),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
     "signup": MessageLookupByLibrary.simpleMessage("Signup"),
+    "terms": MessageLookupByLibrary.simpleMessage("Terms"),
     "title": MessageLookupByLibrary.simpleMessage("Hello"),
     "too_many_requests": MessageLookupByLibrary.simpleMessage(
       "Too many failed attempts. Please try again later.",
@@ -160,5 +171,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "wrong_password": MessageLookupByLibrary.simpleMessage(
       "Incorrect password!",
     ),
+    "today": MessageLookupByLibrary.simpleMessage("Today"),
+    "yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
+    "search_username": MessageLookupByLibrary.simpleMessage("Search username..."),
+    "sticker_load_error": MessageLookupByLibrary.simpleMessage("Unable to load stickers"),
+    "no_stickers": MessageLookupByLibrary.simpleMessage("No stickers available"),
+    "chat_load_error": MessageLookupByLibrary.simpleMessage("Unable to load messages"),
+    "save_success": MessageLookupByLibrary.simpleMessage("Saved successfully!"),
   };
 }

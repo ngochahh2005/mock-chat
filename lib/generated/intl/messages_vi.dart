@@ -36,6 +36,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Xác nhận mật khẩu",
     ),
+    "content_policy": MessageLookupByLibrary.simpleMessage(
+      "Chúng tôi cam kết bảo vệ quyền riêng tư của bạn. Toàn bộ dữ liệu cá nhân và nội dung tin nhắn của bạn đều được mã hóa an toàn trên hệ thống. Ứng dụng chỉ thu thập các thông tin cần thiết (như địa chỉ email, số điện thoại) để duy trì hoạt động, xác thực tài khoản và cải thiện trải nghiệm người dùng. Chúng tôi tuyệt đối không bán, trao đổi hoặc chia sẻ thông tin cá nhân của bạn cho bất kỳ bên thứ ba nào vì mục đích thương mại mà không có sự đồng ý rõ ràng từ bạn.",
+    ),
+    "content_terms": MessageLookupByLibrary.simpleMessage(
+      "Bằng việc đăng ký và sử dụng ứng dụng chat của chúng tôi, bạn đồng ý tuân thủ các quy định hiện hành. Bạn tự chịu trách nhiệm bảo mật thông tin đăng nhập và mọi hoạt động diễn ra trên tài khoản của mình. Ứng dụng nghiêm cấm các hành vi gửi tin nhắn rác (spam), lừa đảo, phát tán mã độc, quấy rối hoặc chia sẻ nội dung vi phạm pháp luật. Chúng tôi có quyền đình chỉ hoặc xóa vĩnh viễn tài khoản của bạn mà không cần báo trước nếu phát hiện có sự vi phạm. Các điều khoản này có thể được cập nhật theo thời gian và việc bạn tiếp tục sử dụng ứng dụng đồng nghĩa với việc bạn chấp nhận những thay đổi đó.",
+    ),
     "create_your_account": MessageLookupByLibrary.simpleMessage(
       "Tạo tài khoản của bạn",
     ),
@@ -61,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "Email này đã được sử dụng bởi tài khoản khác!",
     ),
+    "enter_message": MessageLookupByLibrary.simpleMessage("Nhập tin nhắn..."),
     "error_message": MessageLookupByLibrary.simpleMessage(
       "Đăng nhập thất bại. Mã lỗi:",
     ),
@@ -88,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "invalid_otp": MessageLookupByLibrary.simpleMessage("Mã OTP không hợp lệ."),
     "language": MessageLookupByLibrary.simpleMessage("Ngôn ngữ"),
+    "loading": MessageLookupByLibrary.simpleMessage("Đang tải..."),
     "login": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
     "login_to_your_account": MessageLookupByLibrary.simpleMessage(
       "Đăng nhập vào tài khoản của bạn",
@@ -100,6 +108,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_internet_access": MessageLookupByLibrary.simpleMessage(
       "Vui lòng kiểm tra lại kết nối mạng.",
     ),
+    "no_chat": MessageLookupByLibrary.simpleMessage("Chưa có đoạn chat nào!"),
+    "no_message": MessageLookupByLibrary.simpleMessage("Chưa có tin nhắn!"),
     "not_found": MessageLookupByLibrary.simpleMessage("Không tìm thấy."),
     "not_logged_in": MessageLookupByLibrary.simpleMessage(
       "Bạn chưa đăng nhập!",
@@ -114,15 +124,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "permission_denied": MessageLookupByLibrary.simpleMessage(
       "Thông báo khi quyền truy cập bị từ chối",
     ),
-    "policy": MessageLookupByLibrary.simpleMessage("chính sách"),
+    "policy": MessageLookupByLibrary.simpleMessage("Chính sách"),
     "profile": MessageLookupByLibrary.simpleMessage("Trang cá nhân"),
     "register": MessageLookupByLibrary.simpleMessage("Đăng ký"),
     "registered_successfully": MessageLookupByLibrary.simpleMessage(
       "Đăng ký thành công",
     ),
-    "regulation": MessageLookupByLibrary.simpleMessage("điều khoản"),
     "save": MessageLookupByLibrary.simpleMessage("Lưu"),
     "signup": MessageLookupByLibrary.simpleMessage("Đăng ký"),
+    "terms": MessageLookupByLibrary.simpleMessage("Điều khoản"),
     "title": MessageLookupByLibrary.simpleMessage("Xin chào"),
     "too_many_requests": MessageLookupByLibrary.simpleMessage(
       "Bạn đã nhập sai quá nhiều lần. Vui lòng thử lại sau.",
@@ -165,5 +175,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "wrong_password": MessageLookupByLibrary.simpleMessage(
       "Mật khẩu không chính xác!",
     ),
+    "today": MessageLookupByLibrary.simpleMessage("Hôm nay"),
+    "yesterday": MessageLookupByLibrary.simpleMessage("Hôm qua"),
+    "search_username": MessageLookupByLibrary.simpleMessage("Tìm kiếm username..."),
+    "sticker_load_error": MessageLookupByLibrary.simpleMessage("Không tải được sticker"),
+    "no_stickers": MessageLookupByLibrary.simpleMessage("Chưa có sticker"),
+    "chat_load_error": MessageLookupByLibrary.simpleMessage("Không thể tải tin nhắn"),
+    "save_success": MessageLookupByLibrary.simpleMessage("Lưu thành công!"),
   };
 }

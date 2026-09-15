@@ -1,5 +1,6 @@
 import 'package:base_bloc_3/features/authen/domain/repository/authen_repository.dart';
 import 'package:base_bloc_3/import.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 part 'auth_bloc.freezed.dart';
 
@@ -28,8 +29,11 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
   }
 
   Future<void> _onStarted(Emitter<AuthState> emit) async {
-    final isExpried = await _checkExpiredToken();
-    if (!isExpried) {
+    // FirebaseAuth restores its persisted session automatically. Do not use
+    // the cached ID token as the login flag because Firebase ID tokens expire
+    // and are refreshed internally while the session remains valid.
+    final user = await FirebaseAuth.instance.authStateChanges().first;
+    if (user != null && user.emailVerified) {
       emit(
         state.copyWith(
           isLogin: true,
@@ -127,10 +131,4 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
     emit(state.copyWith(isLogoutSuccess: true, isLogin: false));
   }
 
-  Future<bool> _checkExpiredToken() async {
-    final accessToken = await _localStorage.get(SharePrefConstants.accessToken);
-    return accessToken == null ||
-        accessToken.isEmpty ||
-        JwtDecoder.isExpired(accessToken);
-  }
 }

@@ -4,12 +4,14 @@ part of 'chat_bloc.dart';
 class ChatState extends BaseBlocState {
   final List<ChatRoomEntity> rooms;
   final List<UserEntity> searchResults;
+  final Map<String, UserEntity> users;
 
   const ChatState({
     required super.status,
     super.message,
     required this.rooms,
     required this.searchResults,
+    required this.users,
   });
 
   factory ChatState.init() {
@@ -17,6 +19,7 @@ class ChatState extends BaseBlocState {
       status: BaseStateStatus.init,
       rooms: [],
       searchResults: [],
+      users: {},
     );
   }
 
@@ -26,5 +29,6 @@ class ChatState extends BaseBlocState {
         message,
         rooms,
         searchResults,
+        users,
       ];
 }

@@ -5,4 +5,5 @@ class ChatEvent with _$ChatEvent {
   const factory ChatEvent.fetchMyRooms() = _FetchMyRooms;
   const factory ChatEvent.searchUser(String username) = _SearchUser;
   const factory ChatEvent.clearSearch() = _ClearSearch;
+  const factory ChatEvent.fetchUserInfo(String peerId) = _FetchUserInfo;
 }

@@ -1,6 +1,7 @@
 import 'package:base_bloc_3/common/widgets/not_found_screen.dart';
-import 'package:base_bloc_3/features/category/index.dart';
 import 'package:base_bloc_3/features/chat/index.dart';
+import 'package:base_bloc_3/features/chat/domain/entity/chat_room_entity.dart';
+import 'package:base_bloc_3/features/chat/domain/repository/chat_repository.dart';
 import 'package:base_bloc_3/features/profile/index.dart';
 import 'package:base_bloc_3/features/setting_app/bloc/setting_bloc.dart';
 import 'package:base_bloc_3/import.dart';
@@ -36,13 +37,6 @@ final router = GoRouter(
         child: TalkerScreen(
           talker: getIt<Talker>(),
         ),
-      ),
-    ),
-    GoRoute(
-      path: RouteName.category,
-      pageBuilder: (context, state) => MaterialPage(
-        key: state.pageKey,
-        child: CategoryPage(),
       ),
     ),
     ShellRoute(
@@ -81,11 +75,11 @@ final router = GoRouter(
       pageBuilder: (context, state) {
         final extra = state.extra as Map<String, dynamic>;
         final roomId = extra['roomId'] as String;
-        final peerName = extra['peerName'] as String;
+        final peerInfo = extra['peerInfo'] as UserEntity;
 
         return MaterialPage(
           key: state.pageKey,
-          child: ChatDetailPage(roomId: roomId, peerName: peerName),
+          child: ChatDetailPage(roomId: roomId, peerInfo: peerInfo),
         );
       },
     ),
@@ -112,7 +106,14 @@ Widget _buildBottomNavigationBar(BuildContext context, GoRouterState state) {
     selectedIdx = 0;
   }
 
-  return Container(
+  return StreamBuilder<List<ChatRoomEntity>>(
+    stream: getIt<ChatRepo>().getMyChatRooms(),
+    builder: (context, snapshot) {
+      final unreadRooms = snapshot.data
+              ?.where((room) => room.unreadCount > 0)
+              .length ??
+          0;
+      return Container(
     margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
     decoration: BoxDecoration(
       color: Colors.white,
@@ -134,7 +135,7 @@ Widget _buildBottomNavigationBar(BuildContext context, GoRouterState state) {
           icon: CupertinoIcons.chat_bubble_2_fill,
           label: S.of(context).message,
           isSelected: selectedIdx == 0,
-          badgeCount: 3,
+          badgeCount: unreadRooms,
           showDot: true,
           onTap: () => context.go(RouteName.chat),
         ),
@@ -160,6 +161,8 @@ Widget _buildBottomNavigationBar(BuildContext context, GoRouterState state) {
         ),
       ],
     ),
+      );
+    },
   );
 }
 
@@ -200,27 +203,28 @@ Widget _buildNavItem({
               Icon(
                 icon,
                 color: color,
-                size: 24,
+                size: 28,
               ),
               if (badgeCount != null && badgeCount > 0)
                 Positioned(
-                  right: -10,
+                  right: -8,
                   top: -6,
                   child: Container(
                     padding: const EdgeInsets.all(4),
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Color(0xffD32F2F),
                       shape: BoxShape.circle,
+                      border: Border.all(color: Colors.white, width: 2,),
                     ),
                     constraints: const BoxConstraints(
-                      maxHeight: 16,
-                      maxWidth: 16,
+                      maxHeight: 28,
+                      maxWidth: 28,
                     ),
                     child: Text(
                       '$badgeCount',
                       style: const TextStyle(
                         color: Colors.white,
-                        fontSize: 9,
+                        fontSize: 10,
                         fontWeight: FontWeight.bold,
                       ),
                       textAlign: TextAlign.center,

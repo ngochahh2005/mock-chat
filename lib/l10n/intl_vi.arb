@@ -41,8 +41,7 @@
   "forgot_password": "Quên mật khẩu?",
   "full_name": "Họ và tên",
   "agree_with": "Tôi đồng ý với các ",
-  "policy": "chính sách",
-  "regulation": "điều khoản",
+  "policy": "Chính sách",
   "message": "Tin nhắn",
   "friends": "Bạn bè",
   "profile": "Trang cá nhân",
@@ -63,5 +62,19 @@
   "logout": "Đăng xuất",
   "app_version": "Phiên bản ứng dụng",
   "edit_info": "Chỉnh sửa thông tin",
-  "save": "Lưu"
+  "save": "Lưu",
+  "no_chat": "Chưa có đoạn chat nào!",
+  "loading": "Đang tải...",
+  "no_message": "Chưa có tin nhắn!",
+  "terms": "Điều khoản",
+  "content_terms": "Bằng việc đăng ký và sử dụng ứng dụng chat của chúng tôi, bạn đồng ý tuân thủ các quy định hiện hành. Bạn tự chịu trách nhiệm bảo mật thông tin đăng nhập và mọi hoạt động diễn ra trên tài khoản của mình. Ứng dụng nghiêm cấm các hành vi gửi tin nhắn rác (spam), lừa đảo, phát tán mã độc, quấy rối hoặc chia sẻ nội dung vi phạm pháp luật. Chúng tôi có quyền đình chỉ hoặc xóa vĩnh viễn tài khoản của bạn mà không cần báo trước nếu phát hiện có sự vi phạm. Các điều khoản này có thể được cập nhật theo thời gian và việc bạn tiếp tục sử dụng ứng dụng đồng nghĩa với việc bạn chấp nhận những thay đổi đó.",
+  "content_policy": "Chúng tôi cam kết bảo vệ quyền riêng tư của bạn. Toàn bộ dữ liệu cá nhân và nội dung tin nhắn của bạn đều được mã hóa an toàn trên hệ thống. Ứng dụng chỉ thu thập các thông tin cần thiết (như địa chỉ email, số điện thoại) để duy trì hoạt động, xác thực tài khoản và cải thiện trải nghiệm người dùng. Chúng tôi tuyệt đối không bán, trao đổi hoặc chia sẻ thông tin cá nhân của bạn cho bất kỳ bên thứ ba nào vì mục đích thương mại mà không có sự đồng ý rõ ràng từ bạn.",
+  "enter_message": "Nhập tin nhắn..."
+  "today": "Hôm nay",
+  "yesterday": "Hôm qua"
+  "search_username": "Tìm kiếm username...",
+  "sticker_load_error": "Không tải được sticker",
+  "no_stickers": "Chưa có sticker",
+  "chat_load_error": "Không thể tải tin nhắn",
+  "save_success": "Lưu thành công!"
 }

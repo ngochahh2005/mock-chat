@@ -1,0 +1,1 @@
+export 'supabase_storage_service.dart';

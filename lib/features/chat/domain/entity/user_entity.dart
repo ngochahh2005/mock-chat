@@ -4,7 +4,6 @@ class UserEntity {
   final String uid;
   final String email;
   final String username;
-  final String password;
   final String? avatar;
   final String? displayName;
 
@@ -12,7 +11,6 @@ class UserEntity {
     required this.uid,
     required this.email,
     required this.username,
-    required this.password,
     this.avatar,
     this.displayName,
   });
@@ -22,7 +20,6 @@ class UserEntity {
       uid: userModel.uid,
       email: userModel.email,
       username: userModel.username,
-      password: userModel.password,
       avatar: userModel.avatar,
       displayName: userModel.displayName,
     );

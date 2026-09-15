@@ -429,14 +429,9 @@ class S {
     );
   }
 
-  /// `policies`
+  /// `Policies`
   String get policy {
-    return Intl.message('policies', name: 'policy', desc: '', args: []);
-  }
-
-  /// `regulations`
-  String get regulation {
-    return Intl.message('regulations', name: 'regulation', desc: '', args: []);
+    return Intl.message('Policies', name: 'policy', desc: '', args: []);
   }
 
   /// `Message`
@@ -612,6 +607,81 @@ class S {
   /// `Save`
   String get save {
     return Intl.message('Save', name: 'save', desc: '', args: []);
+  }
+
+  /// `No chats yet!`
+  String get no_chats {
+    return Intl.message('No chats yet!', name: 'no_chats', desc: '', args: []);
+  }
+
+  String get no_chat {
+    return Intl.message('No chats yet!', name: 'no_chat', desc: '', args: []);
+  }
+
+  /// `Loading...`
+  String get loading {
+    return Intl.message('Loading...', name: 'loading', desc: '', args: []);
+  }
+
+  /// `No messages yet!`
+  String get no_message {
+    return Intl.message(
+      'No messages yet!',
+      name: 'no_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today`
+  String get today {
+    return Intl.message('Today', name: 'today', desc: '', args: []);
+  }
+
+  /// `Yesterday`
+  String get yesterday {
+    return Intl.message('Yesterday', name: 'yesterday', desc: '', args: []);
+  }
+
+  String get search_username => Intl.message('Search username...', name: 'search_username', desc: '', args: []);
+  String get sticker_load_error => Intl.message('Unable to load stickers', name: 'sticker_load_error', desc: '', args: []);
+  String get no_stickers => Intl.message('No stickers available', name: 'no_stickers', desc: '', args: []);
+  String get chat_load_error => Intl.message('Unable to load messages', name: 'chat_load_error', desc: '', args: []);
+  String get save_success => Intl.message('Saved successfully!', name: 'save_success', desc: '', args: []);
+
+  /// `Terms`
+  String get terms {
+    return Intl.message('Terms', name: 'terms', desc: '', args: []);
+  }
+
+  /// `By registering and using our chat application, you agree to comply with these terms. You are solely responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account. The application strictly prohibits spamming, phishing, distributing malware, harassment, or sharing any illegal content. We reserve the right to suspend or permanently terminate your account without prior notice if any violation is detected. These terms may be updated periodically, and your continued use of the app constitutes your acceptance of such changes.`
+  String get content_terms {
+    return Intl.message(
+      'By registering and using our chat application, you agree to comply with these terms. You are solely responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account. The application strictly prohibits spamming, phishing, distributing malware, harassment, or sharing any illegal content. We reserve the right to suspend or permanently terminate your account without prior notice if any violation is detected. These terms may be updated periodically, and your continued use of the app constitutes your acceptance of such changes.',
+      name: 'content_terms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We are committed to protecting your privacy. All your personal data and message contents are securely encrypted on our systems. The application only collects information necessary to maintain its functionality, authenticate accounts, and improve user experience. We strictly do not sell, trade, or share your personal information with any third parties for commercial purposes without your explicit consent.`
+  String get content_policy {
+    return Intl.message(
+      'We are committed to protecting your privacy. All your personal data and message contents are securely encrypted on our systems. The application only collects information necessary to maintain its functionality, authenticate accounts, and improve user experience. We strictly do not sell, trade, or share your personal information with any third parties for commercial purposes without your explicit consent.',
+      name: 'content_policy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter message...`
+  String get enter_message {
+    return Intl.message(
+      'Enter message...',
+      name: 'enter_message',
+      desc: '',
+      args: [],
+    );
   }
 }
 

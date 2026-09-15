@@ -12,7 +12,7 @@ class SecureStorageService {
   static const _keyToken = 'access_token';
 
   Future<void> saveToken({required String token}) async {
-    await _storage.read(key: _keyToken);
+    await _storage.write(key: _keyToken, value: token);
   }
 
   Future<void> clearToken() async {

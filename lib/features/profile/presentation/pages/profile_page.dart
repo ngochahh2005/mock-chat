@@ -81,7 +81,10 @@ class _ProfilePageState
                                     child: Column(
                                       children: [
                                         // user info
-                                        UserInfo(user: user, onTap: () => _goToEditPage(context),),
+                                        UserInfo(
+                                          user: user,
+                                          onTap: () => _goToEditPage(context),
+                                        ),
                                         SizedBox(
                                           height: 8.h,
                                         ),
@@ -316,6 +319,20 @@ class UserInfo extends StatelessWidget {
                     fit: BoxFit.cover,
                     height: 60.h,
                     width: 60.w,
+                    placeholder: (context, url) => Container(
+                      color: Color(0xffd2d2d2),
+                      child: Icon(
+                        CupertinoIcons.photo,
+                        color: Colors.white,
+                      ),
+                    ),
+                    errorWidget: (context, url, error) => Container(
+                      color: Colors.red[200],
+                      child: Icon(
+                        Icons.broken_image,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 )
               : Icon(
