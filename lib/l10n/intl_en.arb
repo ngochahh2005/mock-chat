@@ -71,12 +71,26 @@
   "terms": "Terms",
   "content_terms": "By registering and using our chat application, you agree to comply with these terms. You are solely responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account. The application strictly prohibits spamming, phishing, distributing malware, harassment, or sharing any illegal content. We reserve the right to suspend or permanently terminate your account without prior notice if any violation is detected. These terms may be updated periodically, and your continued use of the app constitutes your acceptance of such changes.",
   "content_policy": "We are committed to protecting your privacy. All your personal data and message contents are securely encrypted on our systems. The application only collects information necessary to maintain its functionality, authenticate accounts, and improve user experience. We strictly do not sell, trade, or share your personal information with any third parties for commercial purposes without your explicit consent.",
-  "enter_message": "Enter message..."
+  "enter_message": "Enter message...",
   "today": "Today",
-  "yesterday": "Yesterday"
+  "yesterday": "Yesterday",
   "search_username": "Search username...",
   "sticker_load_error": "Unable to load stickers",
   "no_stickers": "No stickers available",
   "chat_load_error": "Unable to load messages",
-  "save_success": "Saved successfully!"
+  "save_success": "Saved successfully!",
+  "friends": "Friends",
+  "all": "All",
+  "requests": "Requests",
+  "friend_requests": "Friend requests",
+  "accept": "Accept",
+  "cancel": "Cancel",
+  "request_sent": "Request sent",
+  "search_friends": "Search friends",
+  "add_friend": "Add friend",
+  "unfriend": "Unfriend",
+  "no_users": "No users yet",
+  "no_search_results": "No users found",
+  "no_friends": "No friends yet",
+  "no_friend_results": "No results found"
 }

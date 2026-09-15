@@ -58,8 +58,8 @@ class _ChatPageState
               child: GestureDetector(
                 onTap: () {},
                 child: Container(
-                  width: 42,
-                  height: 42,
+                  width: 35.w,
+                  height: 35.h,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,

@@ -24,13 +24,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "accept": MessageLookupByLibrary.simpleMessage("Đồng ý"),
+    "add_friend": MessageLookupByLibrary.simpleMessage("Kết bạn"),
     "agree_with": MessageLookupByLibrary.simpleMessage("Tôi đồng ý với các "),
+    "all": MessageLookupByLibrary.simpleMessage("Tất cả"),
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "Đã có tài khoản?",
     ),
     "app_version": MessageLookupByLibrary.simpleMessage("Phiên bản ứng dụng"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Hủy"),
     "channel_error": MessageLookupByLibrary.simpleMessage(
       "Vui lòng nhập đầy đủ email và mật khẩu.",
+    ),
+    "chat_load_error": MessageLookupByLibrary.simpleMessage(
+      "Không thể tải tin nhắn",
     ),
     "click_to_reload": MessageLookupByLibrary.simpleMessage("Nhấn để tải lại"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
@@ -81,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Trải nghiệm Awesome Chat",
     ),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Quên mật khẩu?"),
+    "friend_requests": MessageLookupByLibrary.simpleMessage("Lời mời kết bạn"),
     "friends": MessageLookupByLibrary.simpleMessage("Bạn bè"),
     "full_name": MessageLookupByLibrary.simpleMessage("Họ và tên"),
     "greeting": MessageLookupByLibrary.simpleMessage(
@@ -105,11 +113,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "network_request_failed": MessageLookupByLibrary.simpleMessage(
       "Lỗi kết nối mạng. Vui lòng kiểm tra lại 3G/Wifi.",
     ),
+    "no_chat": MessageLookupByLibrary.simpleMessage("Chưa có đoạn chat nào!"),
     "no_internet_access": MessageLookupByLibrary.simpleMessage(
       "Vui lòng kiểm tra lại kết nối mạng.",
     ),
-    "no_chat": MessageLookupByLibrary.simpleMessage("Chưa có đoạn chat nào!"),
     "no_message": MessageLookupByLibrary.simpleMessage("Chưa có tin nhắn!"),
+    "no_stickers": MessageLookupByLibrary.simpleMessage("Chưa có sticker"),
     "not_found": MessageLookupByLibrary.simpleMessage("Không tìm thấy."),
     "not_logged_in": MessageLookupByLibrary.simpleMessage(
       "Bạn chưa đăng nhập!",
@@ -130,13 +139,25 @@ class MessageLookup extends MessageLookupByLibrary {
     "registered_successfully": MessageLookupByLibrary.simpleMessage(
       "Đăng ký thành công",
     ),
+    "request_sent": MessageLookupByLibrary.simpleMessage("Đã gửi yêu cầu"),
+    "requests": MessageLookupByLibrary.simpleMessage("Yêu cầu"),
     "save": MessageLookupByLibrary.simpleMessage("Lưu"),
+    "save_success": MessageLookupByLibrary.simpleMessage("Lưu thành công!"),
+    "search_friends": MessageLookupByLibrary.simpleMessage("Tìm kiếm bạn bè"),
+    "search_username": MessageLookupByLibrary.simpleMessage(
+      "Tìm kiếm username...",
+    ),
     "signup": MessageLookupByLibrary.simpleMessage("Đăng ký"),
+    "sticker_load_error": MessageLookupByLibrary.simpleMessage(
+      "Không tải được sticker",
+    ),
     "terms": MessageLookupByLibrary.simpleMessage("Điều khoản"),
     "title": MessageLookupByLibrary.simpleMessage("Xin chào"),
+    "today": MessageLookupByLibrary.simpleMessage("Hôm nay"),
     "too_many_requests": MessageLookupByLibrary.simpleMessage(
       "Bạn đã nhập sai quá nhiều lần. Vui lòng thử lại sau.",
     ),
+    "unfriend": MessageLookupByLibrary.simpleMessage("Hủy kết bạn"),
     "user_disabled": MessageLookupByLibrary.simpleMessage(
       "Tài khoản đã bị vô hiệu hóa!",
     ),
@@ -175,12 +196,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "wrong_password": MessageLookupByLibrary.simpleMessage(
       "Mật khẩu không chính xác!",
     ),
-    "today": MessageLookupByLibrary.simpleMessage("Hôm nay"),
     "yesterday": MessageLookupByLibrary.simpleMessage("Hôm qua"),
-    "search_username": MessageLookupByLibrary.simpleMessage("Tìm kiếm username..."),
-    "sticker_load_error": MessageLookupByLibrary.simpleMessage("Không tải được sticker"),
-    "no_stickers": MessageLookupByLibrary.simpleMessage("Chưa có sticker"),
-    "chat_load_error": MessageLookupByLibrary.simpleMessage("Không thể tải tin nhắn"),
-    "save_success": MessageLookupByLibrary.simpleMessage("Lưu thành công!"),
+    "no_users": MessageLookupByLibrary.simpleMessage("Chưa có người dùng"),
+    "no_search_results": MessageLookupByLibrary.simpleMessage(
+      "Không tìm thấy người dùng",
+    ),
+    "no_friends": MessageLookupByLibrary.simpleMessage("Chưa có bạn bè nào"),
+    "no_friend_results": MessageLookupByLibrary.simpleMessage(
+      "Không tìm thấy kết quả",
+    ),
   };
 }

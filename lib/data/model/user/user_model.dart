@@ -8,7 +8,6 @@ abstract class UserModel with _$UserModel {
     required String uid,
     required String email,
     required String username,
-    required String password,
     String? avatar,
     String? displayName,
   }) = _UserModel;

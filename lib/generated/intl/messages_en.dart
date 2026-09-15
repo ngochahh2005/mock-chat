@@ -25,13 +25,20 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Email": MessageLookupByLibrary.simpleMessage("Email"),
+    "accept": MessageLookupByLibrary.simpleMessage("Accept"),
+    "add_friend": MessageLookupByLibrary.simpleMessage("Add friend"),
     "agree_with": MessageLookupByLibrary.simpleMessage("I agree with the "),
+    "all": MessageLookupByLibrary.simpleMessage("All"),
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
     "app_version": MessageLookupByLibrary.simpleMessage("App version"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "channel_error": MessageLookupByLibrary.simpleMessage(
       "Please enter both email and password.",
+    ),
+    "chat_load_error": MessageLookupByLibrary.simpleMessage(
+      "Unable to load messages",
     ),
     "click_to_reload": MessageLookupByLibrary.simpleMessage("Click to reload"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
@@ -82,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Experience Awesome Chat",
     ),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot password?"),
+    "friend_requests": MessageLookupByLibrary.simpleMessage("Friend requests"),
     "friends": MessageLookupByLibrary.simpleMessage("Friends"),
     "full_name": MessageLookupByLibrary.simpleMessage("Full name"),
     "greeting": MessageLookupByLibrary.simpleMessage("Welcome to my app!"),
@@ -104,12 +112,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "network_request_failed": MessageLookupByLibrary.simpleMessage(
       "Network connection error. Please check your 3G/Wifi.",
     ),
-    "no_chats": MessageLookupByLibrary.simpleMessage("No chats yet!"),
     "no_chat": MessageLookupByLibrary.simpleMessage("No chats yet!"),
+    "no_chats": MessageLookupByLibrary.simpleMessage("No chats yet!"),
     "no_internet_access": MessageLookupByLibrary.simpleMessage(
       "No internet access, please check your internet connection",
     ),
     "no_message": MessageLookupByLibrary.simpleMessage("No messages yet!"),
+    "no_stickers": MessageLookupByLibrary.simpleMessage(
+      "No stickers available",
+    ),
     "not_found": MessageLookupByLibrary.simpleMessage("Not found."),
     "not_logged_in": MessageLookupByLibrary.simpleMessage(
       "You are not logged in!",
@@ -128,13 +139,25 @@ class MessageLookup extends MessageLookupByLibrary {
     "registered_successfully": MessageLookupByLibrary.simpleMessage(
       "Registered Successfully",
     ),
+    "request_sent": MessageLookupByLibrary.simpleMessage("Request sent"),
+    "requests": MessageLookupByLibrary.simpleMessage("Requests"),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
+    "save_success": MessageLookupByLibrary.simpleMessage("Saved successfully!"),
+    "search_friends": MessageLookupByLibrary.simpleMessage("Search friends"),
+    "search_username": MessageLookupByLibrary.simpleMessage(
+      "Search username...",
+    ),
     "signup": MessageLookupByLibrary.simpleMessage("Signup"),
+    "sticker_load_error": MessageLookupByLibrary.simpleMessage(
+      "Unable to load stickers",
+    ),
     "terms": MessageLookupByLibrary.simpleMessage("Terms"),
     "title": MessageLookupByLibrary.simpleMessage("Hello"),
+    "today": MessageLookupByLibrary.simpleMessage("Today"),
     "too_many_requests": MessageLookupByLibrary.simpleMessage(
       "Too many failed attempts. Please try again later.",
     ),
+    "unfriend": MessageLookupByLibrary.simpleMessage("Unfriend"),
     "user_disabled": MessageLookupByLibrary.simpleMessage(
       "This account has been disabled!",
     ),
@@ -171,12 +194,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "wrong_password": MessageLookupByLibrary.simpleMessage(
       "Incorrect password!",
     ),
-    "today": MessageLookupByLibrary.simpleMessage("Today"),
     "yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
-    "search_username": MessageLookupByLibrary.simpleMessage("Search username..."),
-    "sticker_load_error": MessageLookupByLibrary.simpleMessage("Unable to load stickers"),
-    "no_stickers": MessageLookupByLibrary.simpleMessage("No stickers available"),
-    "chat_load_error": MessageLookupByLibrary.simpleMessage("Unable to load messages"),
-    "save_success": MessageLookupByLibrary.simpleMessage("Saved successfully!"),
+    "no_users": MessageLookupByLibrary.simpleMessage("No users yet"),
+    "no_search_results": MessageLookupByLibrary.simpleMessage(
+      "No users found",
+    ),
+    "no_friends": MessageLookupByLibrary.simpleMessage("No friends yet"),
+    "no_friend_results": MessageLookupByLibrary.simpleMessage(
+      "No results found",
+    ),
   };
 }

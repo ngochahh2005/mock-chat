@@ -614,6 +614,7 @@ class S {
     return Intl.message('No chats yet!', name: 'no_chats', desc: '', args: []);
   }
 
+  /// `No chats yet!`
   String get no_chat {
     return Intl.message('No chats yet!', name: 'no_chat', desc: '', args: []);
   }
@@ -632,22 +633,6 @@ class S {
       args: [],
     );
   }
-
-  /// `Today`
-  String get today {
-    return Intl.message('Today', name: 'today', desc: '', args: []);
-  }
-
-  /// `Yesterday`
-  String get yesterday {
-    return Intl.message('Yesterday', name: 'yesterday', desc: '', args: []);
-  }
-
-  String get search_username => Intl.message('Search username...', name: 'search_username', desc: '', args: []);
-  String get sticker_load_error => Intl.message('Unable to load stickers', name: 'sticker_load_error', desc: '', args: []);
-  String get no_stickers => Intl.message('No stickers available', name: 'no_stickers', desc: '', args: []);
-  String get chat_load_error => Intl.message('Unable to load messages', name: 'chat_load_error', desc: '', args: []);
-  String get save_success => Intl.message('Saved successfully!', name: 'save_success', desc: '', args: []);
 
   /// `Terms`
   String get terms {
@@ -679,6 +664,157 @@ class S {
     return Intl.message(
       'Enter message...',
       name: 'enter_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today`
+  String get today {
+    return Intl.message('Today', name: 'today', desc: '', args: []);
+  }
+
+  /// `Yesterday`
+  String get yesterday {
+    return Intl.message('Yesterday', name: 'yesterday', desc: '', args: []);
+  }
+
+  /// `Search username...`
+  String get search_username {
+    return Intl.message(
+      'Search username...',
+      name: 'search_username',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unable to load stickers`
+  String get sticker_load_error {
+    return Intl.message(
+      'Unable to load stickers',
+      name: 'sticker_load_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No stickers available`
+  String get no_stickers {
+    return Intl.message(
+      'No stickers available',
+      name: 'no_stickers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unable to load messages`
+  String get chat_load_error {
+    return Intl.message(
+      'Unable to load messages',
+      name: 'chat_load_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saved successfully!`
+  String get save_success {
+    return Intl.message(
+      'Saved successfully!',
+      name: 'save_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get all {
+    return Intl.message('All', name: 'all', desc: '', args: []);
+  }
+
+  /// `Requests`
+  String get requests {
+    return Intl.message('Requests', name: 'requests', desc: '', args: []);
+  }
+
+  /// `Friend requests`
+  String get friend_requests {
+    return Intl.message(
+      'Friend requests',
+      name: 'friend_requests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accept`
+  String get accept {
+    return Intl.message('Accept', name: 'accept', desc: '', args: []);
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `Request sent`
+  String get request_sent {
+    return Intl.message(
+      'Request sent',
+      name: 'request_sent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search friends`
+  String get search_friends {
+    return Intl.message(
+      'Search friends',
+      name: 'search_friends',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add friend`
+  String get add_friend {
+    return Intl.message('Add friend', name: 'add_friend', desc: '', args: []);
+  }
+
+  /// `Unfriend`
+  String get unfriend {
+    return Intl.message('Unfriend', name: 'unfriend', desc: '', args: []);
+  }
+
+  String get no_users {
+    return Intl.message('No users yet', name: 'no_users', desc: '', args: []);
+  }
+
+  String get no_search_results {
+    return Intl.message(
+      'No users found',
+      name: 'no_search_results',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get no_friends {
+    return Intl.message(
+      'No friends yet',
+      name: 'no_friends',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get no_friend_results {
+    return Intl.message(
+      'No results found',
+      name: 'no_friend_results',
       desc: '',
       args: [],
     );

@@ -24,14 +24,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "accept": MessageLookupByLibrary.simpleMessage("承認"),
+    "add_friend": MessageLookupByLibrary.simpleMessage("友達追加"),
     "agree_with": MessageLookupByLibrary.simpleMessage("私は"),
+    "all": MessageLookupByLibrary.simpleMessage("すべて"),
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "すでにアカウントをお持ちですか？",
     ),
     "app_version": MessageLookupByLibrary.simpleMessage("アプリケーションバージョン"),
+    "cancel": MessageLookupByLibrary.simpleMessage("キャンセル"),
     "channel_error": MessageLookupByLibrary.simpleMessage(
       "メールアドレスとパスワードを入力してください。",
     ),
+    "chat_load_error": MessageLookupByLibrary.simpleMessage("メッセージを読み込めません"),
     "click_to_reload": MessageLookupByLibrary.simpleMessage(
       "再読み込みをクリックしてください。",
     ),
@@ -75,7 +80,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_unknown": MessageLookupByLibrary.simpleMessage("不明なエラーが発生しました。"),
     "experience_app": MessageLookupByLibrary.simpleMessage("素晴らしいチャット体験を"),
     "forgot_password": MessageLookupByLibrary.simpleMessage("パスワードをお忘れですか？"),
-    "friends": MessageLookupByLibrary.simpleMessage("友人"),
+    "friend_requests": MessageLookupByLibrary.simpleMessage("友達リクエスト"),
+    "friends": MessageLookupByLibrary.simpleMessage("友達"),
     "full_name": MessageLookupByLibrary.simpleMessage("フルネーム"),
     "greeting": MessageLookupByLibrary.simpleMessage("私のアプリへようこそ!"),
     "home_screen": MessageLookupByLibrary.simpleMessage("ホーム画面"),
@@ -93,11 +99,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "network_request_failed": MessageLookupByLibrary.simpleMessage(
       "ネットワーク接続エラーです。3G/Wi-Fiをご確認ください。",
     ),
+    "no_chat": MessageLookupByLibrary.simpleMessage("まだチャットはありません"),
     "no_internet_access": MessageLookupByLibrary.simpleMessage(
       "インターネットに接続できません。接続を確認してください。",
     ),
-    "no_chat": MessageLookupByLibrary.simpleMessage("まだチャットはありません"),
     "no_message": MessageLookupByLibrary.simpleMessage("まだメッセージはありません！"),
+    "no_stickers": MessageLookupByLibrary.simpleMessage("スタンプがありません"),
     "not_found": MessageLookupByLibrary.simpleMessage(
       "リソースが見つからない場合に表示されるメッセージ",
     ),
@@ -114,13 +121,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "profile": MessageLookupByLibrary.simpleMessage("個人ページ"),
     "register": MessageLookupByLibrary.simpleMessage("登録"),
     "registered_successfully": MessageLookupByLibrary.simpleMessage("登録成功"),
+    "request_sent": MessageLookupByLibrary.simpleMessage("リクエスト送信済み"),
+    "requests": MessageLookupByLibrary.simpleMessage("リクエスト"),
     "save": MessageLookupByLibrary.simpleMessage("保存"),
+    "save_success": MessageLookupByLibrary.simpleMessage("保存しました！"),
+    "search_friends": MessageLookupByLibrary.simpleMessage("友達を検索"),
+    "search_username": MessageLookupByLibrary.simpleMessage("ユーザー名を検索..."),
     "signup": MessageLookupByLibrary.simpleMessage("サインアップ"),
+    "sticker_load_error": MessageLookupByLibrary.simpleMessage("スタンプを読み込めません"),
     "terms": MessageLookupByLibrary.simpleMessage("規約"),
     "title": MessageLookupByLibrary.simpleMessage("Hello"),
+    "today": MessageLookupByLibrary.simpleMessage("今日"),
     "too_many_requests": MessageLookupByLibrary.simpleMessage(
       "試行回数が多すぎます。しばらくしてからもう一度お試しください。",
     ),
+    "unfriend": MessageLookupByLibrary.simpleMessage("友達削除"),
     "user_disabled": MessageLookupByLibrary.simpleMessage("このアカウントは無効化されています！"),
     "user_info_not_found": MessageLookupByLibrary.simpleMessage(
       "ユーザー情報が見つかりませんでした！",
@@ -153,12 +168,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "welcome_back": MessageLookupByLibrary.simpleMessage("お帰りなさい"),
     "wrong_password": MessageLookupByLibrary.simpleMessage("パスワードが正しくありません！"),
-    "today": MessageLookupByLibrary.simpleMessage("今日"),
     "yesterday": MessageLookupByLibrary.simpleMessage("昨日"),
-    "search_username": MessageLookupByLibrary.simpleMessage("ユーザー名を検索..."),
-    "sticker_load_error": MessageLookupByLibrary.simpleMessage("スタンプを読み込めません"),
-    "no_stickers": MessageLookupByLibrary.simpleMessage("スタンプがありません"),
-    "chat_load_error": MessageLookupByLibrary.simpleMessage("メッセージを読み込めません"),
-    "save_success": MessageLookupByLibrary.simpleMessage("保存しました！"),
+    "no_users": MessageLookupByLibrary.simpleMessage("ユーザーがいません"),
+    "no_search_results": MessageLookupByLibrary.simpleMessage(
+      "ユーザーが見つかりません",
+    ),
+    "no_friends": MessageLookupByLibrary.simpleMessage("友達がいません"),
+    "no_friend_results": MessageLookupByLibrary.simpleMessage(
+      "結果が見つかりません",
+    ),
   };
 }
