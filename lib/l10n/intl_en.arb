@@ -92,5 +92,25 @@
   "no_users": "No users yet",
   "no_search_results": "No users found",
   "no_friends": "No friends yet",
-  "no_friend_results": "No results found"
+  "no_friend_results": "No results found",
+  "friend_request": "Friend request",
+  "friend_request_sent": "Friend request sent",
+  "no_results_found": "No results found",
+  "friend_list": "Friend list",
+  "create_message": "Create message",
+  "search_messages": "Search messages",
+  "clear_search": "Clear search",
+  "no_matching_messages": "No matching messages found",
+  "matching_messages": "{count} matching messages",
+  "@matching_messages": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "message_revoked": "Message was revoked",
+  "image_message": "[Image]",
+  "sticker_message": "[Sticker]",
+  "and": "and"
 }

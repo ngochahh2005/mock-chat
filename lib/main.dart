@@ -26,7 +26,6 @@ Future<void> main() async {
   await EnvConfig.loadEnv();
 
   configureDependencies();
-  await getIt<PushNotificationHelper>().initialize();
   // await getIt<LocalNotificationHelper>().init();
 
   // initFirebaseDynamicLink();
@@ -34,4 +33,8 @@ Future<void> main() async {
   runApp(
     const MyApp(),
   );
+
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    getIt<PushNotificationHelper>().initialize();
+  });
 }

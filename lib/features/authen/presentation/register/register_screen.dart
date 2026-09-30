@@ -98,18 +98,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
         backgroundColor: Colors.white,
       ),
       body: SafeArea(
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            return SingleChildScrollView(
+        child: CustomScrollView(
+          slivers: [
+            SliverPadding(
               padding: EdgeInsets.symmetric(horizontal: 25.w),
-              child: ConstrainedBox(
-                constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                child: IntrinsicHeight(
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+              sliver: SliverFillRemaining(
+                hasScrollBody: false,
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                         // heading
                         SizedBox(height: 50.h),
                         Text(
@@ -203,13 +202,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           flex: 2,
                         ),
                         _buildLoginLink(),
-                      ],
-                    ),
+                    ],
                   ),
                 ),
               ),
-            );
-          },
+            ),
+          ],
         ),
       ),
     );

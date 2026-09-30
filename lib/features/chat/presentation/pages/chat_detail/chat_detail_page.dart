@@ -5,7 +5,7 @@ import 'package:base_bloc_3/features/chat/domain/repository/chat_repository.dart
 import 'package:base_bloc_3/features/chat/presentation/pages/widget/chat_tab_bar.dart';
 import 'package:base_bloc_3/features/chat/presentation/pages/widget/get_message_position.dart';
 import 'package:base_bloc_3/features/chat/presentation/pages/widget/message_frame.dart';
-import 'package:base_bloc_3/features/chat/presentation/pages/widget/peer_avatar.dart';
+import 'package:base_bloc_3/features/chat/presentation/pages/widget/custom_user_avatar.dart';
 import 'package:base_bloc_3/features/chat/presentation/pages/widget/send_time.dart';
 import 'package:base_bloc_3/generated/l10n.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -55,9 +55,12 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
         title: Row(
           spacing: 18,
           children: [
-            PeerAvatar(widget: widget),
+            CustomUserAvatar(
+              avatarUrl: widget.peerInfo.avatar,
+              size: 44,
+            ),
             Text(
-              widget.peerInfo.displayName!,
+              widget.peerInfo.nameDisplay,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             )
           ],
@@ -117,7 +120,10 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                                               MessageGroupPosition.single ||
                                           position ==
                                               MessageGroupPosition.bottom))
-                                        PeerAvatar(widget: widget)
+                                        CustomUserAvatar(
+                                          avatarUrl: widget.peerInfo.avatar,
+                                          size: 44,
+                                        )
                                       else
                                         SizedBox(
                                           height: 44,

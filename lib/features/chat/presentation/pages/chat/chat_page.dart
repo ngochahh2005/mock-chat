@@ -1,9 +1,12 @@
-import 'package:base_bloc_3/features/chat/domain/repository/chat_repository.dart';
 import 'package:base_bloc_3/features/chat/presentation/bloc/chat_bloc.dart';
-import 'package:base_bloc_3/features/chat/widget/search_username_text_field.dart';
+import 'dart:async';
+
+import 'package:base_bloc_3/features/chat/domain/repository/chat_repository.dart';
+import 'package:base_bloc_3/features/chat/widget/search_message_text_field.dart';
 import 'package:base_bloc_3/import.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:intl/intl.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -16,10 +19,25 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState
     extends BaseState<ChatPage, ChatEvent, ChatState, ChatBloc> {
+  final TextEditingController _messageSearchController =
+      TextEditingController();
+  String _messageQuery = '';
+  Map<String, int> _messageMatches = {};
+  bool _isSearchingMessages = false;
+  int _searchRequestId = 0;
+  Timer? _searchDebounce;
+
   @override
   void initState() {
     super.initState();
     bloc.add(const ChatEvent.fetchMyRooms());
+  }
+
+  @override
+  void dispose() {
+    _searchDebounce?.cancel();
+    _messageSearchController.dispose();
+    super.dispose();
   }
 
   @override
@@ -56,7 +74,7 @@ class _ChatPageState
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () => context.push(RouteName.createChat),
                 child: Container(
                   width: 35.w,
                   height: 35.h,
@@ -92,7 +110,23 @@ class _ChatPageState
           children: [
             Padding(
               padding: const EdgeInsets.all(16),
-              child: SearchUsernameTextField(bloc: bloc),
+              child: SearchMessageTextField(
+                controller: _messageSearchController,
+                onChanged: (value) {
+                  setState(() {
+                    _messageQuery = value.trim().toLowerCase();
+                  });
+                  _searchDebounce?.cancel();
+                  if (_messageQuery.isEmpty) {
+                    _searchAllMessages();
+                  } else {
+                    _searchDebounce = Timer(
+                      const Duration(milliseconds: 300),
+                      _searchAllMessages,
+                    );
+                  }
+                },
+              ),
             ),
             Expanded(
               child: Material(
@@ -102,33 +136,29 @@ class _ChatPageState
                   topRight: Radius.circular(30),
                 ),
                 clipBehavior: Clip.antiAlias,
-                child: BlocBuilder<ChatBloc, ChatState>(
+                child: BlocConsumer<ChatBloc, ChatState>(
+                  listenWhen: (previous, current) =>
+                      _messageQuery.isNotEmpty &&
+                      previous.rooms != current.rooms,
+                  listener: (context, state) {
+                    _searchAllMessages();
+                  },
                   builder: (context, state) {
-                    if (state.searchResults.isNotEmpty) {
-                      return ListView.builder(
-                        itemCount: state.searchResults.length,
-                        itemBuilder: (context, i) => ListTile(
-                          title: Text(state.searchResults[i].username),
-                          subtitle: Text(state.searchResults[i].email),
-                          onTap: () async {
-                            final res = await getIt<ChatRepo>()
-                                .getOrCreateChatRoom(
-                                    state.searchResults[i].uid);
-                            await res.fold((_) => null, (roomId) {
-                              context.push(
-                                RouteName.chatDetail,
-                                extra: {
-                                  'roomId': roomId,
-                                  'peerName': state.searchResults[i].username,
-                                },
-                              );
-                            });
-                          },
+                    final visibleRooms = _messageQuery.isEmpty
+                        ? state.rooms
+                        : state.rooms
+                            .where((room) => _messageMatches.containsKey(room.id))
+                            .toList();
+
+                    if (_messageQuery.isNotEmpty && _isSearchingMessages) {
+                      return const Center(
+                        child: SpinKitFadingCircle(
+                          color: Color(0xff4356B4),
                         ),
                       );
                     }
 
-                    if (state.rooms.isEmpty) {
+                    if (visibleRooms.isEmpty) {
                       return Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -140,7 +170,9 @@ class _ChatPageState
                               size: 100,
                             ),
                             Text(
-                              S.of(context).no_chat,
+                              _messageQuery.isEmpty
+                                  ? S.of(context).no_chat
+                                  : S.current.no_matching_messages,
                               style: TextStyle(
                                 fontSize: 24.h,
                                 fontWeight: FontWeight.bold,
@@ -151,9 +183,9 @@ class _ChatPageState
                       );
                     } else {
                       return ListView.separated(
-                        itemCount: state.rooms.length,
+                        itemCount: visibleRooms.length,
                         itemBuilder: (context, i) {
-                          final room = state.rooms[i];
+                          final room = visibleRooms[i];
                           final myUid = FirebaseAuth.instance.currentUser?.uid;
                           final peerId = room.members.firstWhere(
                             (id) => id != myUid,
@@ -233,6 +265,12 @@ class _ChatPageState
                                               width: 50,
                                               height: 50,
                                               fit: BoxFit.cover,
+                                              errorWidget: (_, __, ___) => const Center(
+                                                child: Icon(
+                                                  Icons.person,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
                                             ),
                                           )
                                               : const Center(
@@ -313,7 +351,11 @@ class _ChatPageState
 
                                         // lastest message
                                         Text(
-                                          room.lastMessage ?? S.current.no_message,
+                                          _messageQuery.isNotEmpty
+                                              ? S.current.matching_messages(
+                                                  _messageMatches[room.id] ?? 0,
+                                                )
+                                              : _localizedLastMessage(room.lastMessage),
                                           style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 14,
@@ -361,5 +403,67 @@ class _ChatPageState
         ),
       ),
     );
+  }
+
+  String _localizedLastMessage(String? lastMessage) {
+    switch (lastMessage) {
+      case '__image__':
+      case '[Hình ảnh]':
+        return S.current.image_message;
+      case '__sticker__':
+      case '[Sticker]':
+        return S.current.sticker_message;
+      default:
+        return lastMessage ?? S.current.no_message;
+    }
+  }
+
+  Future<void> _searchAllMessages() async {
+    final query = _messageQuery;
+    final requestId = ++_searchRequestId;
+
+    if (query.isEmpty) {
+      if (!mounted) return;
+      setState(() {
+        _messageMatches = {};
+        _isSearchingMessages = false;
+      });
+      return;
+    }
+
+    if (mounted) {
+      setState(() => _isSearchingMessages = true);
+    }
+
+    final rooms = bloc.state.rooms;
+    final matches = <String, int>{};
+    final results = await Future.wait(
+      rooms.map((room) async {
+        final result = await getIt<ChatRepo>().getMessagesOnce(room.id);
+        return (room.id, result);
+      }),
+    );
+
+    for (final (roomId, result) in results) {
+      result.fold(
+        (_) {},
+        (messages) {
+          final count = messages.where((message) {
+            if (message.isRevoked) return false;
+            return message.content.toLowerCase().contains(query);
+          }).length;
+          if (count > 0) matches[roomId] = count;
+        },
+      );
+    }
+
+    if (!mounted || requestId != _searchRequestId || query != _messageQuery) {
+      return;
+    }
+
+    setState(() {
+      _messageMatches = matches;
+      _isSearchingMessages = false;
+    });
   }
 }

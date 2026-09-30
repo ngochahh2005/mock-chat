@@ -8,6 +8,7 @@ abstract class ChatRepo {
   Stream<List<ChatRoomEntity>> getMyChatRooms();
   Future<Either<BaseError, void>> markRoomAsRead(String roomId);
   Stream<List<MessageEntity>> getMessagesStream(String roomId);
+  Future<Either<BaseError, List<MessageEntity>>> getMessagesOnce(String roomId);
   Future<Either<BaseError, void>> sendMessage(String roomId, String content);
   Future<Either<BaseError, UserEntity>> getUserById(String uid);
   Future<Either<BaseError, void>> sendImageMessage({required String roomId, required XFile image});

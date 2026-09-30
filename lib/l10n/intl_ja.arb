@@ -90,5 +90,26 @@
   "no_users": "ユーザーがいません",
   "no_search_results": "ユーザーが見つかりません",
   "no_friends": "友達がいません",
-  "no_friend_results": "結果が見つかりません"
+  "no_friend_results": "結果が見つかりません",
+  "friend_request": "友達リクエスト",
+  "friend_request_sent": "友達リクエスト送信済み",
+  "no_results_found": "結果が見つかりません",
+  "friend_list": "友達リスト",
+  "create_message": "メッセージ作成",
+  "Email": "メールアドレス",
+  "search_messages": "メッセージを検索",
+  "clear_search": "検索をクリア",
+  "no_matching_messages": "一致するメッセージが見つかりません",
+  "matching_messages": "{count}件の一致するメッセージ",
+  "@matching_messages": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "message_revoked": "メッセージは取り消されました",
+  "image_message": "[画像]",
+  "sticker_message": "[スタンプ]",
+  "and": "と"
 }

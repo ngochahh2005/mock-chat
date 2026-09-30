@@ -4,6 +4,7 @@ import 'package:base_bloc_3/di/di_setup.dart';
 import 'package:base_bloc_3/features/chat/domain/entity/message_entity.dart';
 import 'package:base_bloc_3/features/chat/presentation/pages/widget/get_message_border_radius.dart';
 import 'package:base_bloc_3/features/chat/presentation/pages/widget/get_message_position.dart';
+import 'package:base_bloc_3/generated/l10n.dart';
 import 'package:flutter/cupertino.dart';
 
 class MessageFrame extends StatelessWidget {
@@ -66,7 +67,7 @@ class MessageFrame extends StatelessWidget {
         ),
       ),
       child: Text(
-        !message.isRevoked ? message.content : 'Tin nhắn đã được thu hồi',
+        !message.isRevoked ? message.content : S.current.message_revoked,
         style: TextStyle(
           color: isMe ? Colors.white : Colors.black,
           fontSize: 16,

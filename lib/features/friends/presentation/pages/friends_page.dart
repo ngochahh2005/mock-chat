@@ -159,38 +159,42 @@ class _FriendsPageState
                                 .where((u) =>
                                     state.friends.any((f) => f.uid == u.uid))
                                 .toList();
-                            final requestIds = {
-                              ...state.incomingRequests.map((user) => user.uid),
-                              ...state.outgoingRequests.map((user) => user.uid),
-                            };
-                            final requestsList = users
-                                .where((user) => requestIds.contains(user.uid))
+                            final incomingIds = state.incomingRequests
+                                .map((user) => user.uid)
+                                .toSet();
+                            final incoming = users
+                                .where((request) =>
+                                    incomingIds.contains(request.uid))
                                 .toList();
 
-                            if (users.isEmpty) {
-                              return Center(
-                                child: Text(
-                                  _searchKeyword.trim().isEmpty
-                                      ? S.current.no_users
-                                      : S.current.no_search_results,
-                                ),
-                              );
-                            }
+                            final outgoingIds = state.outgoingRequests
+                                .map((user) => user.uid)
+                                .toSet();
+                            final outgoing = users
+                                .where((request) =>
+                                    outgoingIds.contains(request.uid))
+                                .toList();
 
                             return TabBarView(
                               children: [
+                                // friends
                                 _buildUsersList(
                                   friendsList,
                                   state,
                                   S.current.no_friends,
                                 ),
+
+                                // all
                                 _buildUsersList(
                                   users,
                                   state,
                                   S.current.no_friends,
                                 ),
-                                _buildUsersList(
-                                  requestsList,
+
+                                // requirement
+                                _buildRequestsList(
+                                  incoming,
+                                  outgoing,
                                   state,
                                   S.current.no_friends,
                                 ),
@@ -210,21 +214,84 @@ class _FriendsPageState
     );
   }
 
-  // tab friends
-  Widget _buildUsersList(
-      List<UserEntity> friendsList, FriendsState state, String s) {
-    if (friendsList.isEmpty) {
-      return Center(
-        child:
-            Text(
-              _searchKeyword.trim().isEmpty
-                  ? s
-                  : S.current.no_friend_results,
-            ),
-      );
+  Widget _buildRequestsList(
+    List<UserEntity> incoming,
+    List<UserEntity> outgoing,
+    FriendsState state,
+    String s,
+  ) {
+    if (incoming.isEmpty && outgoing.isEmpty) {
+      return _ListEmpty(searchKeyword: _searchKeyword);
     }
 
+    return ListView(
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      children: [
+        // incoming requests
+        if (incoming.isNotEmpty) ...[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              S.current.friend_requests.toUpperCase(),
+              style: const TextStyle(
+                color: Color(0xff999999),
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          _listView(incoming, state, shrinkWrap: true),
+        ],
+
+        if (incoming.isNotEmpty && outgoing.isNotEmpty)
+          const SizedBox(height: 16),
+
+        // outgoing requests
+        if (outgoing.isNotEmpty) ...[
+          const Padding(
+            padding: EdgeInsets.only(bottom: 16),
+            child: Divider(
+              color: Color(0xffEFEEEE),
+              thickness: 4,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              S.current.friend_request_sent.toUpperCase(),
+              style: const TextStyle(
+                color: Color(0xff999999),
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          _listView(outgoing, state, shrinkWrap: true),
+        ],
+      ],
+    );
+  }
+
+  // tab friends
+  Widget _buildUsersList(
+    List<UserEntity> friendsList,
+    FriendsState state,
+    String s,
+  ) {
+    if (friendsList.isEmpty) {
+      return _ListEmpty(searchKeyword: _searchKeyword);
+    }
+
+    return _listView(friendsList, state);
+  }
+
+  ListView _listView(List<UserEntity> friendsList, FriendsState state,
+      {bool shrinkWrap = false}) {
     return ListView.builder(
+      shrinkWrap: shrinkWrap,
+      physics: shrinkWrap
+          ? const NeverScrollableScrollPhysics()
+          : const AlwaysScrollableScrollPhysics(),
       padding: const EdgeInsets.only(top: 8),
       itemCount: friendsList.length,
       itemBuilder: (context, index) {
@@ -244,11 +311,20 @@ class _FriendsPageState
               children: [
                 CircleAvatar(
                   backgroundColor: const Color(0xff4356B4),
-                  backgroundImage:
-                      user.avatar != null ? NetworkImage(user.avatar!) : null,
                   child: user.avatar == null
                       ? const Icon(Icons.person, color: Colors.white)
-                      : null,
+                      : ClipOval(
+                          child: CachedNetworkImage(
+                            imageUrl: user.avatar!,
+                            width: 40,
+                            height: 40,
+                            fit: BoxFit.cover,
+                            errorWidget: (_, __, ___) => const Icon(
+                              Icons.person,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                 ),
                 const SizedBox(width: 16),
                 Expanded(
@@ -382,10 +458,66 @@ class _FriendsPageState
           },
           child: Text(
             S.current.add_friend,
-            style: TextStyle(fontSize: 12),
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
           ),
         );
       },
+    );
+  }
+}
+
+class _ListEmpty extends StatelessWidget {
+  const _ListEmpty({
+    super.key,
+    required String searchKeyword,
+  }) : _searchKeyword = searchKeyword;
+
+  final String _searchKeyword;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if (_searchKeyword.trim().isEmpty)
+            Icon(
+              Icons.person_off_sharp,
+              color: Color(0xffE1E1E1),
+              size: 200,
+            )
+          else
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Icon(
+                  CupertinoIcons.search,
+                  size: 200,
+                  color: Color(0xffE1E1E1),
+                ),
+                Positioned(
+                  top: 50,
+                  left: 50,
+                  child: Icon(
+                    Icons.clear,
+                    weight: 900,
+                    size: 70,
+                    color: Color(0xffE1E1E1),
+                  ),
+                ),
+              ],
+            ),
+          Text(
+            _searchKeyword.trim().isEmpty
+                ? S.current.no_users
+                : S.current.no_search_results,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 24,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

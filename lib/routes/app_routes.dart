@@ -6,6 +6,7 @@ class RouteName {
   static const String category = '/category';
   static const String chat = '/chat';
   static const String chatDetail = '/chatDetail';
+  static const String createChat = '/createChat';
   static const String splash = '/splash';
   static const String friends = '/friends';
   static const String profile = '/profile';

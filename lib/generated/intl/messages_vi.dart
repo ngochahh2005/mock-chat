@@ -21,6 +21,7 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'vi';
 
   static String m0(uri) => "Không tìm thấy trang với đường dẫn: ${uri}";
+  static String m1(count) => "${count} tin nhắn phù hợp";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -49,6 +50,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "content_terms": MessageLookupByLibrary.simpleMessage(
       "Bằng việc đăng ký và sử dụng ứng dụng chat của chúng tôi, bạn đồng ý tuân thủ các quy định hiện hành. Bạn tự chịu trách nhiệm bảo mật thông tin đăng nhập và mọi hoạt động diễn ra trên tài khoản của mình. Ứng dụng nghiêm cấm các hành vi gửi tin nhắn rác (spam), lừa đảo, phát tán mã độc, quấy rối hoặc chia sẻ nội dung vi phạm pháp luật. Chúng tôi có quyền đình chỉ hoặc xóa vĩnh viễn tài khoản của bạn mà không cần báo trước nếu phát hiện có sự vi phạm. Các điều khoản này có thể được cập nhật theo thời gian và việc bạn tiếp tục sử dụng ứng dụng đồng nghĩa với việc bạn chấp nhận những thay đổi đó.",
     ),
+    "create_message": MessageLookupByLibrary.simpleMessage("Tạo tin nhắn"),
+    "clear_search": MessageLookupByLibrary.simpleMessage("Xóa tìm kiếm"),
+    "Email": MessageLookupByLibrary.simpleMessage("EMAIL"),
+    "image_message": MessageLookupByLibrary.simpleMessage("[Hình ảnh]"),
+    "matching_messages": m1,
+    "message_revoked": MessageLookupByLibrary.simpleMessage("Tin nhắn đã được thu hồi"),
+    "no_matching_messages": MessageLookupByLibrary.simpleMessage("Không tìm thấy tin nhắn phù hợp"),
+    "search_messages": MessageLookupByLibrary.simpleMessage("Tìm tin nhắn"),
+    "sticker_message": MessageLookupByLibrary.simpleMessage("[Sticker]"),
     "create_your_account": MessageLookupByLibrary.simpleMessage(
       "Tạo tài khoản của bạn",
     ),
@@ -88,6 +98,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Trải nghiệm Awesome Chat",
     ),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Quên mật khẩu?"),
+    "friend_list": MessageLookupByLibrary.simpleMessage("Danh sách bạn bè"),
+    "friend_request": MessageLookupByLibrary.simpleMessage("Lời mời kết bạn"),
+    "friend_request_sent": MessageLookupByLibrary.simpleMessage(
+      "Đã gửi kết bạn",
+    ),
     "friend_requests": MessageLookupByLibrary.simpleMessage("Lời mời kết bạn"),
     "friends": MessageLookupByLibrary.simpleMessage("Bạn bè"),
     "full_name": MessageLookupByLibrary.simpleMessage("Họ và tên"),
@@ -114,11 +129,22 @@ class MessageLookup extends MessageLookupByLibrary {
       "Lỗi kết nối mạng. Vui lòng kiểm tra lại 3G/Wifi.",
     ),
     "no_chat": MessageLookupByLibrary.simpleMessage("Chưa có đoạn chat nào!"),
+    "no_friend_results": MessageLookupByLibrary.simpleMessage(
+      "Không tìm thấy kết quả",
+    ),
+    "no_friends": MessageLookupByLibrary.simpleMessage("Chưa có bạn bè nào"),
     "no_internet_access": MessageLookupByLibrary.simpleMessage(
       "Vui lòng kiểm tra lại kết nối mạng.",
     ),
     "no_message": MessageLookupByLibrary.simpleMessage("Chưa có tin nhắn!"),
+    "no_results_found": MessageLookupByLibrary.simpleMessage(
+      "Không tìm thấy kết quả phù hợp",
+    ),
+    "no_search_results": MessageLookupByLibrary.simpleMessage(
+      "Không tìm thấy người dùng",
+    ),
     "no_stickers": MessageLookupByLibrary.simpleMessage("Chưa có sticker"),
+    "no_users": MessageLookupByLibrary.simpleMessage("Chưa có người dùng"),
     "not_found": MessageLookupByLibrary.simpleMessage("Không tìm thấy."),
     "not_logged_in": MessageLookupByLibrary.simpleMessage(
       "Bạn chưa đăng nhập!",
@@ -197,13 +223,5 @@ class MessageLookup extends MessageLookupByLibrary {
       "Mật khẩu không chính xác!",
     ),
     "yesterday": MessageLookupByLibrary.simpleMessage("Hôm qua"),
-    "no_users": MessageLookupByLibrary.simpleMessage("Chưa có người dùng"),
-    "no_search_results": MessageLookupByLibrary.simpleMessage(
-      "Không tìm thấy người dùng",
-    ),
-    "no_friends": MessageLookupByLibrary.simpleMessage("Chưa có bạn bè nào"),
-    "no_friend_results": MessageLookupByLibrary.simpleMessage(
-      "Không tìm thấy kết quả",
-    ),
   };
 }

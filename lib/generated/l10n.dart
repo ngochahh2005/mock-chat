@@ -244,6 +244,14 @@ class S {
     return Intl.message('Email', name: 'Email', desc: '', args: []);
   }
 
+  String get search_messages => Intl.message('Search messages', name: 'search_messages', desc: '', args: []);
+  String get clear_search => Intl.message('Clear search', name: 'clear_search', desc: '', args: []);
+  String get no_matching_messages => Intl.message('No matching messages found', name: 'no_matching_messages', desc: '', args: []);
+  String matching_messages(int count) => Intl.message('$count matching messages', name: 'matching_messages', desc: '', args: [count]);
+  String get message_revoked => Intl.message('Message was revoked', name: 'message_revoked', desc: '', args: []);
+  String get image_message => Intl.message('[Image]', name: 'image_message', desc: '', args: []);
+  String get sticker_message => Intl.message('[Sticker]', name: 'sticker_message', desc: '', args: []);
+
   /// `Create your account`
   String get create_your_account {
     return Intl.message(
@@ -789,10 +797,12 @@ class S {
     return Intl.message('Unfriend', name: 'unfriend', desc: '', args: []);
   }
 
+  /// `No users yet`
   String get no_users {
     return Intl.message('No users yet', name: 'no_users', desc: '', args: []);
   }
 
+  /// `No users found`
   String get no_search_results {
     return Intl.message(
       'No users found',
@@ -802,6 +812,7 @@ class S {
     );
   }
 
+  /// `No friends yet`
   String get no_friends {
     return Intl.message(
       'No friends yet',
@@ -811,10 +822,56 @@ class S {
     );
   }
 
+  /// `No results found`
   String get no_friend_results {
     return Intl.message(
       'No results found',
       name: 'no_friend_results',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Friend request`
+  String get friend_request {
+    return Intl.message(
+      'Friend request',
+      name: 'friend_request',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Friend request sent`
+  String get friend_request_sent {
+    return Intl.message(
+      'Friend request sent',
+      name: 'friend_request_sent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No results found`
+  String get no_results_found {
+    return Intl.message(
+      'No results found',
+      name: 'no_results_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Friend list`
+  String get friend_list {
+    return Intl.message('Friend list', name: 'friend_list', desc: '', args: []);
+  }
+
+  /// `Create message`
+  String get create_message {
+    return Intl.message(
+      'Create message',
+      name: 'create_message',
       desc: '',
       args: [],
     );

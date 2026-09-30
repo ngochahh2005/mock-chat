@@ -1,5 +1,6 @@
 import 'package:base_bloc_3/common/external_lib.dart';
 import 'package:base_bloc_3/common/utils/validators.dart';
+import 'package:base_bloc_3/generated/l10n.dart';
 
 class BuildEmailField extends StatelessWidget {
   final TextEditingController controllerEmail;
@@ -17,7 +18,7 @@ class BuildEmailField extends StatelessWidget {
       controller: controllerEmail,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
-        labelText: 'EMAIL',
+        labelText: S.current.Email,
         helperText: ' ',
         labelStyle: TextStyle(
           fontWeight: FontWeight.normal,

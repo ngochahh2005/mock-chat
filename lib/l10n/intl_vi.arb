@@ -90,5 +90,26 @@
   "no_users": "Chưa có người dùng",
   "no_search_results": "Không tìm thấy người dùng",
   "no_friends": "Chưa có bạn bè nào",
-  "no_friend_results": "Không tìm thấy kết quả"
+  "no_friend_results": "Không tìm thấy kết quả",
+  "friend_request": "Lời mời kết bạn",
+  "friend_request_sent": "Đã gửi kết bạn",
+  "no_results_found": "Không tìm thấy kết quả phù hợp",
+  "friend_list": "Danh sách bạn bè",
+  "create_message": "Tạo tin nhắn",
+  "Email": "EMAIL",
+  "search_messages": "Tìm tin nhắn",
+  "clear_search": "Xóa tìm kiếm",
+  "no_matching_messages": "Không tìm thấy tin nhắn phù hợp",
+  "matching_messages": "{count} tin nhắn phù hợp",
+  "@matching_messages": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "message_revoked": "Tin nhắn đã được thu hồi",
+  "image_message": "[Hình ảnh]",
+  "sticker_message": "[Sticker]",
+  "and": "và"
 }

@@ -21,6 +21,7 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ja';
 
   static String m0(uri) => "${uri} に対するページが見つかりません。";
+  static String m1(count) => "${count}件の一致するメッセージ";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -47,6 +48,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "content_terms": MessageLookupByLibrary.simpleMessage(
       "当社のチャットアプリに登録し利用することにより、お客様は本規約に従うことに同意したものとみなされます。お客様は、ログイン情報の機密性を保持し、ご自身のアカウントで行われるすべての活動に対して単独で責任を負うものとします。当アプリでは、スパム行為、フィッシング、マルウェアの配布、ハラスメント、または違法なコンテンツの共有を固く禁じています。違反が発覚した場合、当社は事前の通知なしにお客様のアカウントを一時停止または永久に削除する権利を留保します。本規約は定期的に更新される場合があり、アプリの継続的な利用をもって変更に同意したものとみなされます。",
     ),
+    "create_message": MessageLookupByLibrary.simpleMessage("メッセージ作成"),
+    "clear_search": MessageLookupByLibrary.simpleMessage("検索をクリア"),
+    "Email": MessageLookupByLibrary.simpleMessage("メールアドレス"),
+    "image_message": MessageLookupByLibrary.simpleMessage("[画像]"),
+    "matching_messages": m1,
+    "message_revoked": MessageLookupByLibrary.simpleMessage("メッセージは取り消されました"),
+    "no_matching_messages": MessageLookupByLibrary.simpleMessage("一致するメッセージが見つかりません"),
+    "search_messages": MessageLookupByLibrary.simpleMessage("メッセージを検索"),
+    "sticker_message": MessageLookupByLibrary.simpleMessage("[スタンプ]"),
     "create_your_account": MessageLookupByLibrary.simpleMessage("アカウントを作成"),
     "dio_cancel_other": MessageLookupByLibrary.simpleMessage(
       "サーバーへの接続に失敗しました。もう一度お試しください。",
@@ -80,6 +90,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_unknown": MessageLookupByLibrary.simpleMessage("不明なエラーが発生しました。"),
     "experience_app": MessageLookupByLibrary.simpleMessage("素晴らしいチャット体験を"),
     "forgot_password": MessageLookupByLibrary.simpleMessage("パスワードをお忘れですか？"),
+    "friend_list": MessageLookupByLibrary.simpleMessage("友達リスト"),
+    "friend_request": MessageLookupByLibrary.simpleMessage("友達リクエスト"),
+    "friend_request_sent": MessageLookupByLibrary.simpleMessage("友達リクエスト送信済み"),
     "friend_requests": MessageLookupByLibrary.simpleMessage("友達リクエスト"),
     "friends": MessageLookupByLibrary.simpleMessage("友達"),
     "full_name": MessageLookupByLibrary.simpleMessage("フルネーム"),
@@ -100,11 +113,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "ネットワーク接続エラーです。3G/Wi-Fiをご確認ください。",
     ),
     "no_chat": MessageLookupByLibrary.simpleMessage("まだチャットはありません"),
+    "no_friend_results": MessageLookupByLibrary.simpleMessage("結果が見つかりません"),
+    "no_friends": MessageLookupByLibrary.simpleMessage("友達がいません"),
     "no_internet_access": MessageLookupByLibrary.simpleMessage(
       "インターネットに接続できません。接続を確認してください。",
     ),
     "no_message": MessageLookupByLibrary.simpleMessage("まだメッセージはありません！"),
+    "no_results_found": MessageLookupByLibrary.simpleMessage("結果が見つかりません"),
+    "no_search_results": MessageLookupByLibrary.simpleMessage("ユーザーが見つかりません"),
     "no_stickers": MessageLookupByLibrary.simpleMessage("スタンプがありません"),
+    "no_users": MessageLookupByLibrary.simpleMessage("ユーザーがいません"),
     "not_found": MessageLookupByLibrary.simpleMessage(
       "リソースが見つからない場合に表示されるメッセージ",
     ),
@@ -169,13 +187,5 @@ class MessageLookup extends MessageLookupByLibrary {
     "welcome_back": MessageLookupByLibrary.simpleMessage("お帰りなさい"),
     "wrong_password": MessageLookupByLibrary.simpleMessage("パスワードが正しくありません！"),
     "yesterday": MessageLookupByLibrary.simpleMessage("昨日"),
-    "no_users": MessageLookupByLibrary.simpleMessage("ユーザーがいません"),
-    "no_search_results": MessageLookupByLibrary.simpleMessage(
-      "ユーザーが見つかりません",
-    ),
-    "no_friends": MessageLookupByLibrary.simpleMessage("友達がいません"),
-    "no_friend_results": MessageLookupByLibrary.simpleMessage(
-      "結果が見つかりません",
-    ),
   };
 }

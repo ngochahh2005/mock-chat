@@ -21,6 +21,7 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   static String m0(uri) => "Can\'t find a page for: ${uri}";
+  static String m1(count) => "${count} matching messages";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -50,6 +51,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "content_terms": MessageLookupByLibrary.simpleMessage(
       "By registering and using our chat application, you agree to comply with these terms. You are solely responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account. The application strictly prohibits spamming, phishing, distributing malware, harassment, or sharing any illegal content. We reserve the right to suspend or permanently terminate your account without prior notice if any violation is detected. These terms may be updated periodically, and your continued use of the app constitutes your acceptance of such changes.",
     ),
+    "create_message": MessageLookupByLibrary.simpleMessage("Create message"),
+    "clear_search": MessageLookupByLibrary.simpleMessage("Clear search"),
+    "image_message": MessageLookupByLibrary.simpleMessage("[Image]"),
+    "matching_messages": m1,
+    "message_revoked": MessageLookupByLibrary.simpleMessage("Message was revoked"),
+    "no_matching_messages": MessageLookupByLibrary.simpleMessage("No matching messages found"),
+    "search_messages": MessageLookupByLibrary.simpleMessage("Search messages"),
+    "sticker_message": MessageLookupByLibrary.simpleMessage("[Sticker]"),
     "create_your_account": MessageLookupByLibrary.simpleMessage(
       "Create your account",
     ),
@@ -89,6 +98,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Experience Awesome Chat",
     ),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot password?"),
+    "friend_list": MessageLookupByLibrary.simpleMessage("Friend list"),
+    "friend_request": MessageLookupByLibrary.simpleMessage("Friend request"),
+    "friend_request_sent": MessageLookupByLibrary.simpleMessage(
+      "Friend request sent",
+    ),
     "friend_requests": MessageLookupByLibrary.simpleMessage("Friend requests"),
     "friends": MessageLookupByLibrary.simpleMessage("Friends"),
     "full_name": MessageLookupByLibrary.simpleMessage("Full name"),
@@ -114,13 +128,22 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "no_chat": MessageLookupByLibrary.simpleMessage("No chats yet!"),
     "no_chats": MessageLookupByLibrary.simpleMessage("No chats yet!"),
+    "no_friend_results": MessageLookupByLibrary.simpleMessage(
+      "No results found",
+    ),
+    "no_friends": MessageLookupByLibrary.simpleMessage("No friends yet"),
     "no_internet_access": MessageLookupByLibrary.simpleMessage(
       "No internet access, please check your internet connection",
     ),
     "no_message": MessageLookupByLibrary.simpleMessage("No messages yet!"),
+    "no_results_found": MessageLookupByLibrary.simpleMessage(
+      "No results found",
+    ),
+    "no_search_results": MessageLookupByLibrary.simpleMessage("No users found"),
     "no_stickers": MessageLookupByLibrary.simpleMessage(
       "No stickers available",
     ),
+    "no_users": MessageLookupByLibrary.simpleMessage("No users yet"),
     "not_found": MessageLookupByLibrary.simpleMessage("Not found."),
     "not_logged_in": MessageLookupByLibrary.simpleMessage(
       "You are not logged in!",
@@ -195,13 +218,5 @@ class MessageLookup extends MessageLookupByLibrary {
       "Incorrect password!",
     ),
     "yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
-    "no_users": MessageLookupByLibrary.simpleMessage("No users yet"),
-    "no_search_results": MessageLookupByLibrary.simpleMessage(
-      "No users found",
-    ),
-    "no_friends": MessageLookupByLibrary.simpleMessage("No friends yet"),
-    "no_friend_results": MessageLookupByLibrary.simpleMessage(
-      "No results found",
-    ),
   };
 }

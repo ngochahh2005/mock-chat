@@ -52,15 +52,18 @@ final router = GoRouter(
     GoRoute(
       path: RouteName.login,
       pageBuilder: (BuildContext context, GoRouterState state) =>
-          _buildTransitionPage(key: state.pageKey, child: const LoginScreen()),
+          NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const LoginScreen(),
+      ),
     ),
     GoRoute(
       path: RouteName.register,
       pageBuilder: (BuildContext context, GoRouterState state) =>
-          _buildTransitionPage(
-            key: state.pageKey,
-            child: const RegisterScreen(),
-          ),
+          NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const RegisterScreen(),
+      ),
     ),
     GoRoute(
       path: RouteName.talkerScreen,
@@ -122,6 +125,13 @@ final router = GoRouter(
           child: ChatDetailPage(roomId: roomId, peerInfo: peerInfo),
         );
       },
+    ),
+    GoRoute(
+      path: RouteName.createChat,
+      pageBuilder: (context, state) => _buildTransitionPage(
+        key: state.pageKey,
+        child: const CreateChatPage(),
+      ),
     ),
     GoRoute(
       path: RouteName.editProfile,

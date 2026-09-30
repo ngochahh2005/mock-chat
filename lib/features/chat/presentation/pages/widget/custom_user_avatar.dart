@@ -1,22 +1,23 @@
 import 'package:base_bloc_3/common/external_lib.dart';
-import 'package:base_bloc_3/features/chat/presentation/pages/chat_detail/chat_detail_page.dart';
 import 'package:flutter/cupertino.dart';
 
-class PeerAvatar extends StatelessWidget {
-  const PeerAvatar({
+class CustomUserAvatar extends StatelessWidget {
+  const CustomUserAvatar({
     super.key,
-    required this.widget,
+    required this.avatarUrl,
+    this.size = 44,
   });
 
-  final ChatDetailPage widget;
+  final String? avatarUrl;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 44,
-      height: 44,
+      width: size,
+      height: size,
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
               Color(0xff4356b4),
@@ -27,16 +28,22 @@ class PeerAvatar extends StatelessWidget {
           ),
           shape: BoxShape.circle,
         ),
-        child: widget.peerInfo.avatar != null
+        child: avatarUrl != null && avatarUrl!.isNotEmpty
             ? ClipOval(
           child: CachedNetworkImage(
-            imageUrl: widget.peerInfo.avatar!,
+            imageUrl: avatarUrl!,
             fit: BoxFit.cover,
+            errorWidget: (_, __, ___) => Icon(
+              CupertinoIcons.person_solid,
+              color: Colors.white,
+              size: size * 0.6,
+            ),
           ),
         )
             : Icon(
           CupertinoIcons.person_solid,
           color: Colors.white,
+          size: size * 0.6,
         ),
       ),
     );

@@ -235,7 +235,7 @@ class ChatRepoImpl with ApiHelperMixin implements ChatRepo {
           .collection('chat_rooms')
           .doc(roomId)
           .update({
-        'lastMessage': '[Hình ảnh]',
+        'lastMessage': '__image__',
         'lastMessageTime': now,
       });
 
@@ -244,6 +244,42 @@ class ChatRepoImpl with ApiHelperMixin implements ChatRepo {
       return Left(
         BaseError.httpUnknownError(e.toString()),
       );
+    }
+  }
+
+  @override
+  Future<Either<BaseError, List<MessageEntity>>> getMessagesOnce(
+    String roomId,
+  ) async {
+    try {
+      final snapshot = await _firestore
+          .collection('chat_rooms')
+          .doc(roomId)
+          .collection('messages')
+          .get();
+
+      final messages = snapshot.docs.map((doc) {
+        final data = doc.data();
+        final rawCreatedAt = data['createdAt'];
+        final createdAt = rawCreatedAt is Timestamp
+            ? rawCreatedAt.toDate()
+            : DateTime.tryParse(rawCreatedAt?.toString() ?? '') ??
+                DateTime.fromMillisecondsSinceEpoch(0);
+
+        return MessageEntity(
+          id: doc.id,
+          senderId: data['senderId'] ?? '',
+          content: data['content'] ?? '',
+          createdAt: createdAt,
+          type: data['type'] ?? 'text',
+          storagePath: data['storagePath'],
+          isRevoked: data['isRevoked'] ?? false,
+        );
+      }).toList();
+
+      return Right(messages);
+    } catch (e) {
+      return Left(BaseError.httpUnknownError(e.toString()));
     }
   }
 
@@ -297,7 +333,7 @@ class ChatRepoImpl with ApiHelperMixin implements ChatRepo {
       });
       await _incrementUnreadCount(roomId, user.uid);
       await _firestore.collection('chat_rooms').doc(roomId).update({
-        'lastMessage': '[Sticker]',
+        'lastMessage': '__sticker__',
         'lastMessageTime': now,
       });
       return const Right(null);
